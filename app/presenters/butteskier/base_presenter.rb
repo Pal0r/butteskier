@@ -1,0 +1,2 @@
+class butteskier::BasePresenter
+end

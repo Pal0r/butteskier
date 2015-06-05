@@ -1,0 +1,37 @@
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+*.rbc
+capybara-*.html
+.rspec
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+
+# Make a copy from the templates and use it localy
+config/secrets.yml
+config/database.yml
+
+# Environment normalisation:
+/.bundle
+/vendor/bundle
+
+# Unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+.rvmrc
+
+# If using bower-rails ignore default bower_components path bower.json files
+/vendor/assets/bower_components
+/lib/assets/bower_components
+*.bowerrc
+
+# sublime files
+*.sublime*
+.idea/

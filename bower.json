@@ -1,0 +1,16 @@
+{
+  "lib": {
+    "name": "bower-rails generated lib assets",
+    "dependencies": {
+      "angular"           : "~1",
+      "angular-ui-router" : "latest",
+      "restangular"       : "latest",
+      "underscore"        : "latest",
+      "angular-cookies"   : "latest"
+    }
+  },
+  "vendor": {
+    "name": "bower-rails generated vendor assets",
+    "dependencies": {}
+  }
+}

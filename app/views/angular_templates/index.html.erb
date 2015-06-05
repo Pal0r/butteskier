@@ -1,0 +1,14 @@
+<div class="ng-cloak">
+  <div ng-controller="AppController">
+  	<div id="navbar">
+      <a ui-sref='homeState'>Home Page</a>
+      <a ng-show="user.isLoggedIn" ui-sref='locationState'>Locations</a>
+      <a ng-hide="user.isLoggedIn" ui-sref='loginState'>Login</a>
+      <a ng-hide="user.isLoggedIn" ui-sref='signUpState'>Sign Up</a>
+      <a ng-show="user.isLoggedIn" href='#' ng-click="logout()">Logout</a>
+    </div>
+
+  	<div ui-view></div>
+  </div>
+</div>
+
