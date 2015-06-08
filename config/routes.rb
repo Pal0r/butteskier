@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     #   resource :registration, :only => [:create]
     # end
     
-    resources :locations, :areas
+    resources :areas
   end
   
   root "angular_templates#index"

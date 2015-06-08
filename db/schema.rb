@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605025858) do
+ActiveRecord::Schema.define(version: 20150608151039) do
 
   create_table "areas", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "instagram_id"
+    t.string   "lat"
+    t.string   "long"
   end
 
   create_table "users", force: true do |t|

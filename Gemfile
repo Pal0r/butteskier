@@ -20,6 +20,9 @@ gem 'jquery-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+#Instagram API
+gem 'instagram'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

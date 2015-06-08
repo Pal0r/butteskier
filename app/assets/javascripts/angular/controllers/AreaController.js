@@ -5,7 +5,6 @@ angular.module('app').controller("AreaController",
                 AuthService.setPageTryingToAccess();
                 return $location.path('/sign_in');
             }
-
-            $scope.areas = Restangular.all('areas').getList().$object;
+            $scope.area = Restangular.one('areas').get().$object;
         }
     ]);
