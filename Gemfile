@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #Instagram API
 gem 'instagram'
+gem 'sprockets'
 
 # Use unicorn as the app server
 # gem 'unicorn'
