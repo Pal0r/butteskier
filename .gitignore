@@ -17,7 +17,7 @@ rerun.txt
 pickle-email-*.html
 
 # Make a copy from the templates and use it localy
-config/secrets.yml
+#config/secrets.yml
 config/database.yml
 
 # Environment normalisation:
