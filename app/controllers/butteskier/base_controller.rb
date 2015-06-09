@@ -1,2 +1,2 @@
-class butteskier::BaseController < ApplicationController
+class ButteSkier::BaseController < ApplicationController
 end
