@@ -1,2 +1,2 @@
-class butteskier::BasePresenter
-end
+# class butteskier::BasePresenter
+# end
