@@ -1,8 +1,9 @@
 angular.module('app').controller("AppController",
-  ['$location', '$scope', 'AuthService', '$state', '$window',
-  function ($location, $scope, AuthService, $state, $window) {
+  ['$location', '$scope', 'AuthService', '$state', '$window', 'Restangular',
+  function ($location, $scope, AuthService, $state, $window, Restangular) {
 	$scope.user = {}
 	$scope.user.isLoggedIn = AuthService.isLoggedIn();
+    $scope.area = Restangular.one('areas').get().$object;
 
   $scope.logout = function () {
     AuthService.logout(
