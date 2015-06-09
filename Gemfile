@@ -46,6 +46,9 @@ gem 'bower-rails', '~> 0.9.0'
 #angular templates
 gem 'angular-rails-templates', '~> 0.1.3'
 
+#underscore
+gem 'underscore-rails'
+
 #JSON templating - defaults to JBuilder
 gem 'jbuilder', '~> 2.2.2'
 #gem 'rabl', '~> 0.11.0'

@@ -171,6 +171,7 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    underscore-rails (1.8.2)
     versionist (1.3.0)
       rails (>= 3)
       yard (~> 0.7)
@@ -203,4 +204,5 @@ DEPENDENCIES
   sqlite3
   thin (~> 1.6.3)
   uglifier (>= 1.3.0)
+  underscore-rails
   versionist (~> 1.3.0)
