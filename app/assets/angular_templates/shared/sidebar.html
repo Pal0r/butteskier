@@ -1,0 +1,8 @@
+<ul class="nav nav-pills nav-stacked">
+    <li role="presentation">
+        <h4><a ui-sref="homeState">Map</a></h4>
+    </li>
+    <li ng-repeat="area in areas" role="presentation">
+        <a ui-sref="areaState({ areaID: area.id })">{{area.name}}</a>
+    </li>
+</ul>
