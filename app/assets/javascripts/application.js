@@ -6,6 +6,8 @@
 //= require angular-ui-router
 //= require angular-cookies
 //= require restangular
+//= require gmaps/gmaps.js
+//= require gmaps/angular-google-maps.min.js
 //= require angular-rails-templates
 //= require_tree ../angular_templates
 //= require app

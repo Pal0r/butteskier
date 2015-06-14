@@ -1,0 +1,11 @@
+<div>
+    <h3>{{area.name}}<small> - {{area.description}}</small></h3>
+    <span></span>
+    <div class="col-xs-9">
+        <img ng-repeat="img in area.grams" ng-if="img.visible" ng-src="{{img.standard_resolution}}">
+    </div>
+
+    <div class="col-xs-3" ng-repeat="img in area.grams" ng-if="!img.visible">
+        <img ng-click="imageToggle(area, $index)" src="{{img.thumb_nail}}" class="pad-all-sm">
+    </div>
+</div>

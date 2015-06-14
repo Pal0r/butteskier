@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+      <div class="col-sm-9 angular-google-map-container">
+        <ui-gmap-google-map center='map.center' options="options" zoom='map.zoom'>
+          <ui-gmap-marker ng-repeat="marker in markers" coords="marker.location" idkey="marker.id">
+            <ui-gmap-window option="marker.windowOptions" closeClick="marker.closeClick()">
+              <a ui-sref="areaState({ areaID: {{marker.id}} })">{{marker.name}}</a>
+            </ui-gmap-window>
+          </ui-gmap-marker>
+        </ui-gmap-google-map>
+      </div>
+  </div>
+</div>

@@ -48606,7 +48606,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 }]);
 
 // Angular Rails Template
-// source: app/assets/angular_templates/index.html.erb
+// source: app/assets/angular_templates/map.html.erb
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
   $templateCache.put("index.html", '<h2>Welcome to Butte Skier</h2>\n<h4>{{area.name}}</h4>\n<p>{{area.description}}</p>\n<div ng-repeat="url in area.grams">\n  <img src="{{url}}">\n</div>')

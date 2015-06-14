@@ -1,14 +1,21 @@
 <div class="ng-cloak">
   <div ng-controller="AppController">
-  	<div id="navbar">
-      <a ui-sref='homeState'>Home Page</a>
-      <a ng-show="user.isLoggedIn" ui-sref='locationState'>Locations</a>
-      <a ng-hide="user.isLoggedIn" ui-sref='loginState'>Login</a>
-      <a ng-hide="user.isLoggedIn" ui-sref='signUpState'>Sign Up</a>
-      <a ng-show="user.isLoggedIn" href='#' ng-click="logout()">Logout</a>
-    </div>
-
-  	<div ui-view></div>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a ui-sref='homeState' class="navbar-brand">Butte Skier</a>
+        </div>
+        <span ng-if="user.isLoggedIn" class="navbar-text navbar-right navbar-link">Signed in as
+          <a href="#" class="navbar-link">{{userName}}</a>
+          <a ng-show="user.isLoggedIn" href='#' ng-click="logout()" class="navbar-link">Logout</a>
+        </span>
+        <span ng-if="!user.isLoggedin" class="navbar-text navbar-right">
+          <a ng-hide="user.isLoggedIn" ui-sref='loginState' class="navbar-link">Login</a>
+          <a ng-hide="user.isLoggedIn" ui-sref='signUpState'class="navbar-link">Sign Up</a>
+        </span>
+      </div>
+    </nav>
+    <div class="col-sm-2" ng-include="'shared/sidebar.html'"></div>
+    <div class="col-sm-10" ui-view></div>
   </div>
 </div>
-

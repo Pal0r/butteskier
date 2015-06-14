@@ -2,8 +2,9 @@ app = angular.module('app', [
   'ui.router',   //angular-ui-router
   'templates',   //angular-rails-templates
   'restangular', //restangular
-  'ngCookies'    //angular-cookies
-  ])
+  'ngCookies'  ,  //angular-cookies
+  'uiGmapgoogle-maps' //angular-gmaps
+  ]);
 
 $(document).ready(function(){
   if (!$('body').hasClass('ng-scope'))
@@ -14,10 +15,10 @@ app.value('urlToGoToAfterLogin', {url: '/'});
 
 app.config(['$stateProvider','$urlRouterProvider',
             '$locationProvider', '$httpProvider',
-            'RestangularProvider',
+            'RestangularProvider', 'uiGmapGoogleMapApiProvider',
   function($stateProvider, $urlRouterProvider,
            $locationProvider, $httpProvider,
-           RestangularProvider){
+           RestangularProvider, uiGmapGoogleMapApiProvider){
 
     //unmatched routes redirect to root
     $urlRouterProvider.otherwise("/");
@@ -30,15 +31,10 @@ app.config(['$stateProvider','$urlRouterProvider',
 		controller: 'AppController'
       })
         .state('areaState',{
-            url: '/areas',
-            templateUrl: 'area.html',
+            url: '/area/:areaID',
+            templateUrl: 'areas/area.html',
             controller: 'AreaController'
         })
-      .state('locationState',{
-        url: '/locations',
-        templateUrl: 'location.html',
-        controller : 'LocController'
-      })
       //auth
       .state('loginState',{
         url: '/sign_in',
@@ -58,4 +54,12 @@ app.config(['$stateProvider','$urlRouterProvider',
 
     //restangular settings
     RestangularProvider.setBaseUrl('/v1');
+
+      //Google maps config
+      // TODO: move api key to secrets
+    uiGmapGoogleMapApiProvider.configure({
+      key: 'AIzaSyCdWNoKkcsduyENQ6yuY0InZj96ToJN2Ho',
+      v: '3.17',
+      libraries: 'weather,geometry,visualization'
+     });
   }]);

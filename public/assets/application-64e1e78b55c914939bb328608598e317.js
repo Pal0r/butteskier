@@ -48618,7 +48618,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 }]);
 
 // Angular Rails Template
-// source: app/assets/angular_templates/index.html.erb
+// source: app/assets/angular_templates/map.html.erb
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
   $templateCache.put("index.html", "<h2>Welcome to Butte Skier</h2>")
