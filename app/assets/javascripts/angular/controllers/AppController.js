@@ -8,6 +8,9 @@ angular.module('app').controller("AppController",
       // Gets obj repr of the areaList for the sidenav
       $scope.areas = Restangular.all('areas').getList().$object;
 
+      // Hide the ui-view blur background
+      $scope.hideBackground = true;
+
   $scope.logout = function () {
     AuthService.logout(
       function(res) {

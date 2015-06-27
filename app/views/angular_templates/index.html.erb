@@ -1,6 +1,6 @@
 <div class="ng-cloak">
   <div ng-controller="AppController">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <a ui-sref='homeState' class="navbar-brand">Butte Skier</a>
@@ -15,7 +15,8 @@
         </span>
       </div>
     </nav>
-    <div class="col-sm-2" ng-include="'shared/sidebar.html'"></div>
-    <div class="col-sm-10" ui-view></div>
+    <div ng-include="'shared/sidebar.html'"></div>
+    <div map-display></div>
+    <div id="view-container" ng-class="{'hidden': hideBackground}"ui-view></div>
   </div>
 </div>

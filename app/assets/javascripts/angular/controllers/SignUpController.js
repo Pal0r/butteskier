@@ -4,6 +4,8 @@ angular.module('app').controller("SignUpController",
     if(AuthService.isLoggedIn()){
       $location.path('/');
     }
+      // Hide the ui-view blur background
+      $scope.hideBackground = false;
 
     $scope.signUp = function () {
       var credentials = {

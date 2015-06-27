@@ -1,2 +1,59 @@
+/* General Usage */
 .pad-all-sm {padding: 5px;}
-.angular-google-map-container { height: 600px; }
+.pad-all-md {padding: 10px;}
+.pad-all-lg {padding: 20px;}
+.pad-v-sm {padding: 0 5px;}
+.pad-v-md {padding: 0 10px;}
+.pad-v-lg {padding: 0 20px;}
+.pad-h-sm {padding: 5px 0;}
+.pad-h-md {padding: 10px 0;}
+.pad-h-lg {padding: 20px 0;}
+.pad-l-sm {padding-left: 5px;}
+.pad-l-md {padding-left: 10px;}
+.pad-l-lg {padding-left: 20px;}
+.pad-t-sm {padding-top: 5px;}
+.pad-t-md {padding-top: 10px;}
+.pad-t-lg {padding-top: 20px;}
+.pad-r-sm {padding-right: 5px;}
+.pad-r-md {padding-right: 10px;}
+.pad-r-lg {padding-right: 20px;}
+.pad-b-sm {padding-bottom: 5px;}
+.pad-b-md {padding-bottom: 10px;}
+.pad-b-lg {padding-bottom: 20px;}
+
+.hidden {display: none;}
+.show {display: block;}
+
+/* Primary Nav */
+.navbar-default {margin-bottom: 0;}
+
+/* Sidebar Nav */
+#slideout-inner, #slideout-toggle, #view-container, .navbar{background: rgba(225, 225, 225, .8);  }
+#slideout-inner, #slideout-toggle, #view-container{height: 100%;}
+#slideout, #slideout-inner{
+    position: fixed;
+    top: 50px;
+    padding-left: 10px;
+
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+#slideout-toggle, #slideout-inner a {color: #000000; font-weight: 500}
+#slideout {  z-index: 1000;  left: 0;  }
+#slideout-inner {  left: -250px;  }
+#slideout:hover #slideout-toggle{  visibility: hidden;  }
+#slideout:hover #slideout-inner {  left: 0;  }
+
+/* Primary Display/ngView */
+#view-container {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 160px;
+    width: 77%;
+    z-index: 1000;
+}
+/* Misc */
+.angular-google-map-container { height: 800px;}

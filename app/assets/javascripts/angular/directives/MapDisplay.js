@@ -1,5 +1,5 @@
 angular.module('app').directive('mapDisplay', ['Restangular',
-    function(Restangular){
+    function(Restangular, uiGmapIsReady){
         return {
             restrict: 'A',
             replace: true,
@@ -34,7 +34,11 @@ angular.module('app').directive('mapDisplay', ['Restangular',
                 scope.map = { center: { latitude: "44.0051", longitude: "-121.6425" }, zoom: 11 };
                 scope.options = {
                     mapTypeId: google.maps.MapTypeId.TERRAIN,
-                    scrollwheel: false
+                    scrollwheel: false,
+                    zoomControl: false,
+                    panControl: false,
+                    streetViewControl: false,
+                    mapTypeControl: false
                 };
             }
         }

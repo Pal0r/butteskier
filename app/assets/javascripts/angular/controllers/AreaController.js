@@ -5,6 +5,9 @@ angular.module('app').controller("AreaController",
                 AuthService.setPageTryingToAccess();
                 return $location.path('/sign_in');
             }
+            // Hide the ui-view blur background
+            $scope.hideBackground = false;
+
             // used for state change event when using the sidebar nav
             var areaId = $stateParams.areaID;
             Restangular.one('areas', areaId).get().then(function(area){

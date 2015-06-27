@@ -1,8 +1,13 @@
-<ul class="nav nav-pills nav-stacked">
-    <li role="presentation">
-        <h4><a ui-sref="homeState">Map</a></h4>
-    </li>
-    <li ng-repeat="area in areas" role="presentation">
-        <a ui-sref="areaState({ areaID: area.id })">{{area.name}}</a>
-    </li>
+<ul id="slideout">
+    <div id="slideout-toggle" class="pad-all-md">
+        <h4>Areas</h4>
+    </div>
+    <div id="slideout-inner" class="nav nav-pills nav-stacked pad-v-lg">
+        <li role="presentation">
+            <h4><a ui-sref="homeState">Map</a></h4>
+        </li>
+        <li ng-repeat="area in areas" role="presentation" class="pad-all-md">
+            <a ui-sref="areaState({ areaID: area.id })">{{area.name}}</a>
+        </li>
+    </div>
 </ul>

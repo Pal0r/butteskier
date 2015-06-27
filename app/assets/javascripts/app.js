@@ -27,7 +27,6 @@ app.config(['$stateProvider','$urlRouterProvider',
     $stateProvider
       .state('homeState',{
         url: '/',
-        templateUrl: 'index.html',
 		controller: 'AppController'
       })
         .state('areaState',{
@@ -54,12 +53,4 @@ app.config(['$stateProvider','$urlRouterProvider',
 
     //restangular settings
     RestangularProvider.setBaseUrl('/v1');
-
-      //Google maps config
-      // TODO: move api key to secrets
-    uiGmapGoogleMapApiProvider.configure({
-      key: 'AIzaSyCdWNoKkcsduyENQ6yuY0InZj96ToJN2Ho',
-      v: '3.17',
-      libraries: 'weather,geometry,visualization'
-     });
   }]);
