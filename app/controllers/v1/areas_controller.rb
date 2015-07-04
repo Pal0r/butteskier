@@ -20,7 +20,8 @@ class V1::AreasController < V1::BaseController
   def show
     area = Area.find(params[:id])
     grams = get_instagram_images(area)
-    @area = {name: area.name, description: area.description, grams: grams, id: area.id}
+
+    @area = {name: area.name, description: area.description, grams: grams, id: area.id, comments: area.comments}
   end
 
   def index

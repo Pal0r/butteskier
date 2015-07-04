@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608151039) do
+ActiveRecord::Schema.define(version: 20150702162707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20150608151039) do
     t.string   "lat"
     t.string   "long"
   end
+
+  create_table "comments", force: true do |t|
+    t.string   "comment_body"
+    t.text     "comment_headline"
+    t.integer  "user_id"
+    t.integer  "area_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["area_id"], name: "index_comments_on_area_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -40,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150608151039) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "authentication_token"
+    t.string   "username"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", using: :btree

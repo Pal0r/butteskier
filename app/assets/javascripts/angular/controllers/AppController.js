@@ -2,8 +2,10 @@ angular.module('app').controller("AppController",
   ['$location', '$scope', 'AuthService', '$state', '$window', 'Restangular',
   function ($location, $scope, AuthService, $state, $window, Restangular) {
 	  $scope.user = {};
-      $scope.user.isLoggedIn = AuthService.isLoggedIn();
-      $scope.userName = 'Ryan';
+      var authService = AuthService;
+      $scope.user.isLoggedIn = authService.isLoggedIn();
+      $scope.userName = authService.user.username;
+
 
       // Gets obj repr of the areaList for the sidenav
       $scope.areas = Restangular.all('areas').getList().$object;

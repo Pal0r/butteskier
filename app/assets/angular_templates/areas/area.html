@@ -1,11 +1,34 @@
-<div>
-    <h3>{{area.name}}<small> - {{area.description}}</small></h3>
-    <span></span>
+<div id="area-container" class="pad-all-lg container-fluid">
+    <h3>{{area.name}}<small> - {{area.description}}
+        <span ng-click="directions = !directions"><span ng-if="!directions">Directions</span><span ng-if="directions">Hide</span></span>
+        </small>
+    </h3>
     <div class="col-xs-9">
-        <img ng-repeat="img in area.grams" ng-if="img.visible" ng-src="{{img.standard_resolution}}">
+        <div class="well well-sm" ng-if="directions">
+            Directions: From Mt Bachelor Nordic Center, head south on the Cascade Lakes highway approc 2.5 miles. Area on right directly off road.
+        </div>
+    </div>
+    <div class="col-xs-3">
+        <a class="btn btn-default">Add Report</a>
+        <a class="btn btn-default">Discuss</a>
     </div>
 
-    <div class="col-xs-3" ng-repeat="img in area.grams" ng-if="!img.visible">
-        <img ng-click="imageToggle(area, $index)" src="{{img.thumb_nail}}" class="pad-all-sm">
+    <div class="row">
+        <div class="col-xs-7">
+            <img ng-repeat="img in area.grams" ng-if="img.visible" ng-src="{{img.standard_resolution}}">
+        </div>
+        <div class="col-xs-2 margin-l-md">
+            <div ng-repeat="img in area.grams" ng-if="!img.visible">
+                <img ng-click="imageToggle(area, $index)" src="{{img.thumb_nail}}" class="pad-b-md">
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div ng-include="'areas/action_column.html'"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="pad-all-lg margin-b-lg col-xs-6">
+            <div ng-include="'areas/comment_container.html'"></div>
+        </div>
     </div>
 </div>

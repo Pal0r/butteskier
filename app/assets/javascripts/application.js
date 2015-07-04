@@ -2,8 +2,15 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require underscore
+//= require api-check
+//= require angular
+//= require angular-ui-router
+//= require angular-cookies
 //= require restangular
+//= require angular-formly
+//= require angular-formly-templates-bootstrap
 //= require angular-rails-templates
 //= require_tree ../angular_templates
 //= require app
 //= require_tree .
+//= require_tree ../../../vendor/assets/javascripts/.

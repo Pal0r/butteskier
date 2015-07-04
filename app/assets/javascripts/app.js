@@ -3,7 +3,9 @@ app = angular.module('app', [
   'templates',   //angular-rails-templates
   'restangular', //restangular
   'ngCookies'  ,  //angular-cookies
-  'uiGmapgoogle-maps' //angular-gmaps
+  'uiGmapgoogle-maps', //angular-gmaps
+  'formly', //angular forms
+  'formlyBootstrap'
   ]);
 
 $(document).ready(function(){
@@ -27,7 +29,7 @@ app.config(['$stateProvider','$urlRouterProvider',
     $stateProvider
       .state('homeState',{
         url: '/',
-		controller: 'AppController'
+		    controller: 'AppController'
       })
         .state('areaState',{
             url: '/area/:areaID',

@@ -4,7 +4,7 @@ angular.module('app')
 .factory('AuthService',
 ['$http', '$cookieStore', '$location', '$state', 'urlToGoToAfterLogin',
   function($http, $cookieStore, $location, $state, urlToGoToAfterLogin){
-  var emptyUser = { email: '', auth_token: ''};
+  var emptyUser = { email: '', auth_token: '', username: '', id: ''};
   var currentUser = $cookieStore.get('user') || emptyUser;
 
   function changeUser(user) {

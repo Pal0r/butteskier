@@ -2,6 +2,7 @@
 .pad-all-sm {padding: 5px;}
 .pad-all-md {padding: 10px;}
 .pad-all-lg {padding: 20px;}
+.pad-none {padding: 0;}
 .pad-v-sm {padding: 0 5px;}
 .pad-v-md {padding: 0 10px;}
 .pad-v-lg {padding: 0 20px;}
@@ -21,8 +22,48 @@
 .pad-b-md {padding-bottom: 10px;}
 .pad-b-lg {padding-bottom: 20px;}
 
+.margin-all-sm {margin: 5px;}
+.margin-all-md {margin: 10px;}
+.margin-all-lg {margin: 20px;}
+.margin-v-sm {margin: 0 5px;}
+.margin-v-md {margin: 0 10px;}
+.margin-v-lg {margin: 0 20px;}
+.margin-h-sm {margin: 5px 0;}
+.margin-h-md {margin: 10px 0;}
+.margin-h-lg {margin: 20px 0;}
+.margin-l-sm {margin-left: 5px;}
+.margin-l-md {margin-left: 10px;}
+.margin-l-lg {margin-left: 20px;}
+.margin-t-sm {margin-top: 5px;}
+.margin-t-md {margin-top: 10px;}
+.margin-t-lg {margin-top: 20px;}
+.margin-r-sm {margin-right: 5px;}
+.margin-r-md {margin-right: 10px;}
+.margin-r-lg {margin-right: 20px;}
+.margin-b-sm {margin-bottom: 5px;}
+.margin-b-md {margin-bottom: 10px;}
+.margin-b-lg {margin-bottom: 20px;}
+
+li {list-style-type: none;}
+
+/* Font */
+.font-size-sm {font-size: 80%;}
+.font-size-md {font-size: 105%;}
+.font-size-lg {font-size: 115%;}
+
+.font-weight-400 {font-weight: 400;}
+.font-weight-600 {font-weight: 600;}
+.font-weight-800 {font-weight: 800;}
+
+/* Display */
+.block {display: block;}
 .hidden {display: none;}
 .show {display: block;}
+.right {float: right;}
+.left {float: left;}
+
+/* buttons */
+.btn { background: whitesmoke;}
 
 /* Primary Nav */
 .navbar-default {margin-bottom: 0;}
@@ -57,3 +98,10 @@
 }
 /* Misc */
 .angular-google-map-container { height: 800px;}
+.modal {z-index: 1000;}
+
+/* Area Style */
+#area-container {height: 100%; overflow: auto;}
+
+/* Comment Style */
+.comment-headline{font-weight: 600; font-size: medium;}

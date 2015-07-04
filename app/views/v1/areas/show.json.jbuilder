@@ -1,1 +1,1 @@
-json.extract! @area, :name, :grams, :description
+json.extract! @area, :name, :grams, :description, :comments
