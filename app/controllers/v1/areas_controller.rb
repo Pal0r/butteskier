@@ -17,11 +17,33 @@ class V1::AreasController < V1::BaseController
     grams
   end
 
+  def get_comments(area)
+    comments = []
+
+    area.comments.each do |comment|
+      c = {}
+      c['created_at'] = comment.created_at
+      c['comment_body'] = comment.comment_body
+      c['comment_headline'] = comment.comment_headline
+      c['username'] = comment.user.username
+      c['user_id'] = comment.user_id
+      c['id'] = comment.id
+      comments.append(c)
+    end
+
+    comments
+  end
+
   def show
     area = Area.find(params[:id])
     grams = get_instagram_images(area)
+    comments = get_comments(area)
 
-    @area = {name: area.name, description: area.description, grams: grams, id: area.id, comments: area.comments}
+    @area = {
+        name: area.name, description: area.description,
+        grams: grams, id: area.id, comments: comments,
+        current_user_id: current_user.id
+    }
   end
 
   def index

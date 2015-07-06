@@ -6,6 +6,19 @@ class V1::CommentsController < V1::BaseController
         user_id: current_user.id,
         area_id: params[:areaID]
     )
-    render :json => comment
+    username = comment.user.username
+
+    render :json => {:comment => comment, :username => username}
+  end
+
+  def destroy
+    Comment.find(params[:id]).delete
+    render :json => 'true'
+  end
+
+  private
+
+  def comment_params
+    params.permit(:comment_body, :comment_headline, :areaID)
   end
 end

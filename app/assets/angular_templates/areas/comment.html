@@ -1,0 +1,14 @@
+<div>
+    <span class="font-size-lg font-weight-600">Area Commentary</span>
+    <div ng-repeat="comment in area.comments">
+        <span class="comment-headline">{{comment.comment_headline}} - <small>{{comment.created_at | date : format : 'short'}}</small> by {{comment.username}}</span><br>
+        <span class="comment-body" ng-bind="comment.comment_body"></span>
+        <a href="#" ng-if="comment.user_id == area.current_user_id" ng-click="deleteComment(comment.id, $index)" class="font-weight-400" style="color: slategrey; cursor: hand;" data-toggle="tooltip" title="Delete Comment?">&#10005;</a>
+    </div>
+    <span ng-click="showCommentForm = !showCommentForm"><a href="#" ng-if="!showCommentForm">Add Comment</a><a href="#" ng-if="showCommentForm">Hide</a></span>
+    <form class="well" ng-if="showCommentForm" novalidate ng-submit="submitComment()">
+        <formly-form model="commentFormData" fields="commentFields" form="commentForm">
+            <button type="submit" class="btn btn-default" ng-disabled="commentForm.$invalid">Submit</button>
+        </formly-form>
+    </form>
+</div>

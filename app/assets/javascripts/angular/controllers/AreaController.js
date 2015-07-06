@@ -1,6 +1,6 @@
 angular.module('app').controller("AreaController",
-    ['$location', '$scope', 'Restangular', 'AuthService', '$stateParams', '$http',
-      function ($location, $scope, Restangular, AuthService, $stateParams, $http){
+    ['$location', '$scope', 'Restangular', 'AuthService', '$stateParams',
+      function ($location, $scope, Restangular, AuthService, $stateParams){
         if(!AuthService.isLoggedIn()){
           AuthService.setPageTryingToAccess();
           return $location.path('/sign_in');
@@ -25,34 +25,5 @@ angular.module('app').controller("AreaController",
           });
           area.grams[imageIndex].visible = true;
         };
-        $scope.commentFormData = {
-          areaID: areaId
-        };
-
-        $scope.submitComment = function(){
-          $http.post('/v1/comments', $scope.commentFormData)
-          .success(function(comment){
-              $scope.area.comments.push(comment)
-            })
-        };
-        $scope.commentFields = [
-          {
-            key: 'comment_headline',
-            type: 'input',
-            templateOptions: {
-              label: 'Comment Headline',
-              required: true
-            }
-          },
-          {
-            key: 'comment_body',
-            type: 'textarea',
-            templateOptions: {
-              label: "How'd it go today?",
-              placeholder: 'Tell us about your day. Faceshots? Avy conditions? etc.',
-              required: true
-            }
-          }
-        ]
       }
     ]);

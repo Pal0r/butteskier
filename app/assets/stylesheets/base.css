@@ -104,4 +104,5 @@ li {list-style-type: none;}
 #area-container {height: 100%; overflow: auto;}
 
 /* Comment Style */
-.comment-headline{font-weight: 600; font-size: medium;}
+.comment-headline{font-weight: 400; font-size: medium; color: darkgoldenrod;}
+.comment-body {color: grey;}
