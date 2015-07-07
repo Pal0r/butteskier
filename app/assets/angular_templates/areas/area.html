@@ -15,11 +15,11 @@
 
     <div class="row">
         <div class="col-xs-7">
-            <img ng-repeat="img in area.grams" ng-if="img.visible" ng-src="{{img.standard_resolution}}">
+            <img ng-repeat="img in area.grams" ng-if="img.visible" ng-src="{{img.standard_resolution_url}}">
         </div>
         <div class="col-xs-2 margin-l-md">
             <div ng-repeat="img in area.grams" ng-if="!img.visible">
-                <img ng-click="imageToggle(area, $index)" src="{{img.thumb_nail}}" class="pad-b-md">
+                <img ng-click="imageToggle(area, $index)" src="{{img.thumb_nail_url}}" class="pad-b-md">
             </div>
         </div>
         <div class="col-xs-2">

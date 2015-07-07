@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702162707) do
+ActiveRecord::Schema.define(version: 20150707062013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,19 @@ ActiveRecord::Schema.define(version: 20150702162707) do
 
   add_index "comments", ["area_id"], name: "index_comments_on_area_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "instagram_images", force: true do |t|
+    t.string   "url"
+    t.integer  "area_id"
+    t.string   "standard_resolution_url"
+    t.string   "thumb_nail_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "instagram_id"
+  end
+
+  add_index "instagram_images", ["area_id"], name: "index_instagram_images_on_area_id", using: :btree
+  add_index "instagram_images", ["instagram_id"], name: "index_instagram_images_on_instagram_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

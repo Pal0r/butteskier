@@ -1,25 +1,11 @@
 class V1::AreasController < V1::BaseController
-
-  def get_instagram_images(area)
-    insta_params = {:count => 5, :distance => 500}
-    grams = Array.new
-
-    # Get 5 images within 500km of the area lat/long
-    Instagram.media_search(area.lat, area.long, insta_params).each do |gram|
-      grams.push(
-          {
-              'standard_resolution' => gram.images.standard_resolution.url,
-              'thumb_nail' => gram.images.thumbnail.url
-          }
-      )
-    end
-
-    grams
-  end
+  include FetcherUtils
 
   def get_comments(area)
     comments = []
 
+    # Since we cannot use dot notation in the angular template,
+    # we have to create a new hash and append the username to it.
     area.comments.each do |comment|
       c = {}
       c['created_at'] = comment.created_at
@@ -36,7 +22,7 @@ class V1::AreasController < V1::BaseController
 
   def show
     area = Area.find(params[:id])
-    grams = get_instagram_images(area)
+    grams = get_area_grams(area)
     comments = get_comments(area)
 
     @area = {
