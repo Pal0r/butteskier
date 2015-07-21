@@ -1,21 +1,29 @@
 require 'net/http'
 require 'json'
 
+# For use in cron job task. Creates weather observation
+# objects for each area.
 module WeatherFetcher
+
   def get_all_area_ids
-    area_ids = Area.all.pluck(:id)
+    Area.all.pluck(:id)
+  end
+
+  def update_areas
+    get_all_area_ids.each do |area_id|
+      Observation.new(area_id)
+    end
   end
 
   class Observation
-    # This class variable needs to be less than 750
-    # Stop updates if > 750
-    @@api_request_count
-
     attr_accessor :area, :res
 
     def initialize(area_id)
       @area = Area.find(area_id)
       @res = get_area_weather
+      if @res
+        create_weather_observation
+      end
     end
 
     def build_request_url
@@ -28,20 +36,25 @@ module WeatherFetcher
     end
 
     def get_area_weather
-      build_request_url
-      uri = URI(@url)
-      @res = JSON.parse(Net::HTTP.get(uri))
+      api_count = WeatherObservation.where(
+          'created_at >= ?', Time.zone.now.beginning_of_day
+      ).count
+      # Enforce daily API limit
+      if api_count < 750
+        build_request_url
+        uri = URI(@url)
+        @res = JSON.parse(Net::HTTP.get(uri))
+      else
+        @res = false
+      end
     end
 
-    def print_area_weather_data
-      puts JSON.pretty_generate(JSON.parse(@res))
+    def create_weather_observation
+      if @res
+        WeatherObservation.create(area: @area, weather: @res)
+      else
+        puts 'Exceeded daily api limit'
+      end
     end
   end
-
-
-
-  # Res returns Time format
-  # ex to convert:
-  # t = res['daily']['data'][0]['temperatureMaxTime']
-  # Time.at(t).to_datetime = 2015-07-19 15:00:00 -0700
 end

@@ -38,9 +38,6 @@ gem 'angular-rails-templates', '~> 0.1.3'
 #underscore
 gem 'underscore-rails'
 
-#JSON templating
-gem 'jbuilder', '~> 2.2.2'
-
 #API Versioning
 gem 'versionist', '~> 1.3.0'
 

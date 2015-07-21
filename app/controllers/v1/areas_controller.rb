@@ -24,12 +24,16 @@ class V1::AreasController < V1::BaseController
     area = Area.find(params[:id])
     grams = get_area_grams(area)
     comments = get_comments(area)
+    weather = area.weather_observations.first.weather
+    current_condition = weather[:daily][:summary]
 
     @area = {
         name: area.name, description: area.description,
         grams: grams, id: area.id, comments: comments,
-        current_user_id: current_user.id
+        current_user_id: current_user.id,
+        current_condition: current_condition
     }
+    render json: @area
   end
 
   def index
@@ -40,5 +44,6 @@ class V1::AreasController < V1::BaseController
       area_array.push({name: area.name, id: area.id, lat: area.lat, long: area.long})
     end
     @areas = area_array
+    render json: @areas
   end
 end
