@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  area_id: 
+  standard_resolution_url: MyString
+  thumb_nail_url: MyString
+
+two:
+  url: MyString
+  area_id: 
+  standard_resolution_url: MyString
+  thumb_nail_url: MyString
