@@ -4,7 +4,7 @@ class V1::AreasController < V1::BaseController
   def get_comments(area)
     comments = []
 
-    # Since we cannot use dot notation in the angular template,
+    # Since we cannot use dot notation in our angular template,
     # we have to create a new hash and append the username to it.
     area.comments.each do |comment|
       c = {}
