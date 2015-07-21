@@ -1,6 +1,6 @@
 angular.module('app').controller("AppController",
-  ['$location', '$scope', 'AuthService', '$state', '$window', 'Restangular', 'areaFactory',
-  function ($location, $scope, AuthService, $state, $window, Restangular, areaFactory) {
+  ['$location', '$scope', 'AuthService', '$state', '$window', 'areaFactory',
+  function ($location, $scope, AuthService, $state, $window, areaFactory) {
 	  $scope.user = {};
       var authService = AuthService;
       $scope.user.isLoggedIn = authService.isLoggedIn();

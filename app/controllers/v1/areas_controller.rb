@@ -1,4 +1,5 @@
 class V1::AreasController < V1::BaseController
+  # provides get_area_grams etc
   include FetcherUtils
 
   def get_comments(area)

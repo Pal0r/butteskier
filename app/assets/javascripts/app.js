@@ -1,7 +1,6 @@
 app = angular.module('app', [
   'ui.router',   //angular-ui-router
   'templates',   //angular-rails-templates
-  'restangular', //restangular
   'ngCookies'  ,  //angular-cookies
   'uiGmapgoogle-maps', //angular-gmaps
   'formly', //angular forms
@@ -17,10 +16,9 @@ app.value('urlToGoToAfterLogin', {url: '/'});
 
 app.config(['$stateProvider','$urlRouterProvider',
             '$locationProvider', '$httpProvider',
-            'RestangularProvider', 'uiGmapGoogleMapApiProvider',
+            'uiGmapGoogleMapApiProvider',
   function($stateProvider, $urlRouterProvider,
-           $locationProvider, $httpProvider,
-           RestangularProvider, uiGmapGoogleMapApiProvider){
+           $locationProvider, $httpProvider){
 
     //unmatched routes redirect to root
     $urlRouterProvider.otherwise("/");
@@ -52,7 +50,4 @@ app.config(['$stateProvider','$urlRouterProvider',
       enabled: true,
       requireBase: false
     });
-
-    //restangular settings
-    RestangularProvider.setBaseUrl('/v1');
   }]);

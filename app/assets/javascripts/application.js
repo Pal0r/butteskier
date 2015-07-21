@@ -6,7 +6,6 @@
 //= require angular
 //= require angular-ui-router
 //= require angular-cookies
-//= require restangular
 //= require angular-formly
 //= require angular-formly-templates-bootstrap
 //= require angular-rails-templates

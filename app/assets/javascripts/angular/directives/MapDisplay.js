@@ -1,14 +1,14 @@
-angular.module('app').directive('mapDisplay', ['Restangular',
-    function(Restangular, uiGmapIsReady){
+angular.module('app').directive('mapDisplay', ['areaFactory',
+    function(areaFactory){
         return {
             restrict: 'A',
             replace: true,
             templateUrl: 'map.html',
             link: function(scope, element, attrs){
                 // Wait for the Restangular promise, then create the gmap markers
-                Restangular.all('areas').getList().then(function(areas){
+                areaFactory.getAreas().then(function(res){
                     scope.markers = [];
-                    angular.forEach(areas, function(area){
+                    angular.forEach(res.data, function(area){
                         var marker = {};
                         marker["id"] = area.id;
                         marker["location"] = {

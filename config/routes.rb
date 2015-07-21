@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'weather/new'
+
+  get 'weather/show'
+
+  get 'weather/index'
+
   api_version(:module => "butteskier", :path => {:value => "skiapp"}) do
   end
   #need this to work for API-only backend

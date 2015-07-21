@@ -4,7 +4,6 @@
     "dependencies": {
       "angular"           : "~1",
       "angular-ui-router" : "latest",
-      "restangular"       : "latest",
       "underscore"        : "latest",
       "angular-cookies"   : "latest",
       "angular-formly"    : "latest",
