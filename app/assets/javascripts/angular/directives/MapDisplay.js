@@ -5,7 +5,7 @@ angular.module('app').directive('mapDisplay', ['areaFactory',
             replace: true,
             templateUrl: 'map.html',
             link: function(scope, element, attrs){
-                // Wait for the Restangular promise, then create the gmap markers
+                // Wait for the http promise, then create the gmap markers
                 areaFactory.getAreas().then(function(res){
                     scope.markers = [];
                     angular.forEach(res.data, function(area){

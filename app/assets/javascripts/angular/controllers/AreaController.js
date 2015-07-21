@@ -1,6 +1,6 @@
 angular.module('app').controller("AreaController",
-    ['$location', '$scope', 'Restangular', 'AuthService', '$stateParams', 'areaFactory',
-      function ($location, $scope, Restangular, AuthService, $stateParams, areaFactory){
+    ['$location', '$scope', 'AuthService', '$stateParams', 'areaFactory',
+      function ($location, $scope, AuthService, $stateParams, areaFactory){
         if(!AuthService.isLoggedIn()){
           AuthService.setPageTryingToAccess();
           return $location.path('/sign_in');
