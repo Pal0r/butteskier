@@ -1,34 +1,18 @@
 <div id="area-container" class="pad-all-lg container-fluid">
-    <h3>{{area.name}}<small> - {{area.description}}
-        <span ng-click="directions = !directions"><span ng-if="!directions">Directions</span><span ng-if="directions">Hide</span></span>
-        </small>
-    </h3>
-    <div class="col-xs-9">
-        <div class="well well-sm" ng-if="directions">
-            Directions: From Mt Bachelor Nordic Center, head south on the Cascade Lakes highway approc 2.5 miles. Area on right directly off road.
-        </div>
-    </div>
-    <div class="col-xs-3">
-        <a class="btn btn-default">Add Report</a>
-        <a class="btn btn-default">Discuss</a>
-    </div>
-
     <div class="row">
-        <div class="col-xs-7">
-            <img ng-repeat="img in area.grams" ng-if="img.visible" ng-src="{{img.standard_resolution_url}}">
+        <div class="pad-l-md">
+            <span class="font-size-xl font-weight-500">{{area.name}}</span> {{area.lat}} - {{area.long}}
         </div>
-        <div class="col-xs-2 margin-l-md">
-            <div ng-repeat="img in area.grams" ng-if="!img.visible">
-                <img ng-click="imageToggle(area, $index)" src="{{img.thumb_nail_url}}" class="pad-b-md">
-            </div>
-        </div>
-        <div class="col-xs-2">
-            <div ng-include="'areas/action_column.html'"></div>
-        </div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+            <li role="presentation"><a href="#weather" ng-click="getAreaWeather()" aria-controls="weather" role="tab" data-toggle="tab">Weather</a></li>
+            <li role="presentation"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
+        </ul>
     </div>
-    <div class="row">
-        <div class="pad-all-lg margin-b-lg col-xs-6">
-            <div area-comments></div>
-        </div>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="overview" ng-include="'areas/_overview.html'"></div>
+        <div role="tabpanel" class="tab-pane" id="detail" ng-include="'areas/_detail.html'"></div>
+        <div role="tabpanel" class="tab-pane" id="weather" ng-include="'areas/_weather.html'"></div>
     </div>
 </div>

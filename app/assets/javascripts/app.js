@@ -16,7 +16,6 @@ app.value('urlToGoToAfterLogin', {url: '/'});
 
 app.config(['$stateProvider','$urlRouterProvider',
             '$locationProvider', '$httpProvider',
-            'uiGmapGoogleMapApiProvider',
   function($stateProvider, $urlRouterProvider,
            $locationProvider, $httpProvider){
 

@@ -30,6 +30,7 @@ class V1::AreasController < V1::BaseController
 
     @area = {
         name: area.name, description: area.description,
+        lat: area.lat, long: area.long,
         grams: grams, id: area.id, comments: comments,
         current_user_id: current_user.id,
         current_condition: current_condition

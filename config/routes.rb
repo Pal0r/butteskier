@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'weather/new'
-
-  get 'weather/show'
-
-  get 'weather/index'
 
   api_version(:module => "butteskier", :path => {:value => "skiapp"}) do
   end
@@ -16,7 +11,7 @@ Rails.application.routes.draw do
     #   resource :registration, :only => [:create]
     # end
     
-    resources :areas, :comments
+    resources :areas, :comments, :weather
   end
   
   root "angular_templates#index"

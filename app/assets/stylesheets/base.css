@@ -50,8 +50,10 @@ li {list-style-type: none;}
 .font-size-sm {font-size: 80%;}
 .font-size-md {font-size: 105%;}
 .font-size-lg {font-size: 115%;}
+.font-size-xl {font-size: 150%;}
 
 .font-weight-400 {font-weight: 400;}
+.font-weight-500 {font-weight: 500;}
 .font-weight-600 {font-weight: 600;}
 .font-weight-800 {font-weight: 800;}
 
@@ -102,7 +104,7 @@ li {list-style-type: none;}
 
 /* Area Style */
 #area-container {height: 100%; overflow: auto;}
-
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {background-color: transparent;}
 /* Comment Style */
 .comment-headline{font-weight: 400; font-size: medium; color: darkgoldenrod;}
 .comment-body {color: grey;}
