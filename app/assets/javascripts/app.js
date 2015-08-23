@@ -4,7 +4,8 @@ app = angular.module('app', [
   'ngCookies'  ,  //angular-cookies
   'uiGmapgoogle-maps', //angular-gmaps
   'formly', //angular forms
-  'formlyBootstrap'
+  'formlyBootstrap',
+  'angular-skycons' //Icons for area weather
   ]);
 
 $(document).ready(function(){

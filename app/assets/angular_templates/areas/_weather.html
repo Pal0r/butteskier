@@ -1,3 +1,22 @@
 <div>
-    {{area.current_condition}}
+    <table class="table table-hover">
+        <tr>
+            <th></th>
+            <th>Day</th>
+            <th>Low</th>
+            <th>High</th>
+            <th>Wind<small>(mps)</small></th>
+            <th>Precip</th>
+            <th>Summary</th>
+        </tr>
+        <tr ng-repeat="obs in weather.daily.data" class="font-weight-500">
+            <td><skycon icon="obs.icon"></skycon></td>
+            <td>{{obs.time * 1000 | date:'EEEE'}}</td>
+            <td>{{obs.apparentTemperatureMin | number:0}} at {{obs.temperatureMinTime * 1000 | date:'h a'}}</td>
+            <td>{{obs.apparentTemperatureMax | number:0}} at {{obs.temperatureMaxTime * 1000 | date:'h a'}}</td>
+            <td>{{obs.windSpeed| number:0}} - {{obs.windBearing | cardinal}}</td>
+            <td>{{obs.precipProbability}}% {{obs.precipIntensity}} in</td>
+            <td>{{obs.summary}}</td>
+        </tr>
+    </table>
 </div>

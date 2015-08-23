@@ -35,12 +35,15 @@ module WeatherFetcher
       @url = "#{api_base}#{api_key}/#{lat},#{long}"
     end
 
-    def get_area_weather
-      api_count = WeatherObservation.where(
+    def get_daily_api_calls
+      WeatherObservation.where(
           'created_at >= ?', Time.zone.now.beginning_of_day
       ).count
+    end
+
+    def get_area_weather
       # Enforce daily API limit
-      if api_count < 750
+      if get_daily_api_calls() < 750
         build_request_url
         uri = URI(@url)
         @res = JSON.parse(Net::HTTP.get(uri))
