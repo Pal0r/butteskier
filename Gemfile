@@ -47,6 +47,7 @@ group :test do
 end
 
 group :development do
+  gem 'jasmine'
   gem 'better_errors'
   gem 'pry'
   gem 'pry-byebug'
