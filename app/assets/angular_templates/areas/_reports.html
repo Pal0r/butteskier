@@ -1,0 +1,9 @@
+<div>
+    <h3>Reports <small>Area conditions & general observations</small></h3>
+    <hr>
+    <div ng-repeat="report in area.reports">
+        <h5>{{report.run_name}} <small>{{report.created_at | date: 'MMM d, y h:mm a'}}</small></h5>
+        <div>{{report.description}}</div>
+        - by {{report.username}}
+    </div>
+</div>

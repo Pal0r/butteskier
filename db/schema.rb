@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913004925) do
+ActiveRecord::Schema.define(version: 20150913055544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,22 @@ ActiveRecord::Schema.define(version: 20150913004925) do
 
   add_index "instagram_images", ["area_id"], name: "index_instagram_images_on_area_id", using: :btree
   add_index "instagram_images", ["instagram_id"], name: "index_instagram_images_on_instagram_id", unique: true, using: :btree
+
+  create_table "reports", force: :cascade do |t|
+    t.integer  "new_snow"
+    t.string   "quality"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "area_id"
+    t.boolean  "avalanche"
+    t.integer  "run_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reports", ["area_id"], name: "index_reports_on_area_id", using: :btree
+  add_index "reports", ["run_id"], name: "index_reports_on_run_id", using: :btree
+  add_index "reports", ["user_id"], name: "index_reports_on_user_id", using: :btree
 
   create_table "runs", force: :cascade do |t|
     t.string   "name"
@@ -92,4 +108,7 @@ ActiveRecord::Schema.define(version: 20150913004925) do
 
   add_index "weather_observations", ["area_id"], name: "index_weather_observations_on_area_id", using: :btree
 
+  add_foreign_key "reports", "areas"
+  add_foreign_key "reports", "runs"
+  add_foreign_key "reports", "users"
 end

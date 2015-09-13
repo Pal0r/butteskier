@@ -7,18 +7,38 @@ class V1::AreasController < V1::BaseController
 
     # Since we cannot use dot notation in our angular template,
     # we have to create a new hash and append the username to it.
-    area.comments.each do |comment|
-      c = {}
-      c['created_at'] = comment.created_at
-      c['comment_body'] = comment.comment_body
-      c['comment_headline'] = comment.comment_headline
+    area.comments.eager_load(:user).each do |comment|
+      c = comment.as_json
       c['username'] = comment.user.username
-      c['user_id'] = comment.user_id
-      c['id'] = comment.id
       comments.append(c)
     end
 
     comments
+  end
+
+  def get_reports(area)
+    reports = []
+
+    area.reports.eager_load(:user, :run).each do |report|
+      r = report.as_json
+      r[:username] = report.user.username
+      r[:run_name] = report.run.name
+      reports.append(r)
+    end
+
+    reports
+  end
+
+  def get_report_counts(area)
+    # TODO: This needs to be refactored.
+    counts = {}
+    counts[:yesterday] = area.reports.where("created_at > ?", Time.now-1.days).count
+    counts[:last_week] = area.reports.where("created_at > ?", Time.now-7.days).count
+    counts[:last_month] = area.reports.where("created_at > ?", Time.now-30.days).count
+    counts[:last_quarter] = area.reports.where("created_at > ?", Time.now-90.days).count
+    counts[:last_year] = area.reports.where("created_at > ?", Time.now-360.days).count
+
+    counts
   end
 
   def show
@@ -27,15 +47,20 @@ class V1::AreasController < V1::BaseController
     comments = get_comments(area)
     weather = area.weather_observations.first.weather
     current_condition = weather[:daily][:summary]
+    reports = get_reports(area)
+    report_counts = get_report_counts(area)
 
-    @area = {
-        name: area.name, description: area.description,
-        lat: area.lat, long: area.long,
-        grams: grams, id: area.id, comments: comments,
-        current_user_id: current_user.id,
-        runs: area.runs, directions: area.directions,
-        current_condition: current_condition
-    }
+    area_hash = area.as_json
+    @area = area_hash.merge(
+        {
+            grams: grams,
+            comments: comments,
+            runs: area.runs,
+            current_condition: current_condition,
+            reports: reports,
+            report_counts: report_counts
+        }
+    )
     render json: @area
   end
 

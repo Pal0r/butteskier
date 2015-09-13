@@ -8,11 +8,13 @@
             <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
             <li role="presentation"><a href="#weather" ng-click="getAreaWeather()" aria-controls="weather" role="tab" data-toggle="tab">Weather</a></li>
             <li role="presentation"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Detail</a></li>
+            <li role="presentation"><a href="#reports" aria-controls="reports" role="tab" data-toggle="tab">Reports</a></li>
         </ul>
     </div>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="overview" ng-include="'areas/_overview.html'"></div>
         <div role="tabpanel" class="tab-pane" id="detail" ng-include="'areas/_detail.html'"></div>
         <div role="tabpanel" class="tab-pane" id="weather" ng-include="'areas/_weather.html'"></div>
+        <div role="tabpanel" class="tab-pane" id="reports" ng-include="'areas/_reports.html'"></div>
     </div>
 </div>

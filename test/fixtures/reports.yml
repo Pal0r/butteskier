@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  new_snow: 1
+  quality: MyString
+  description: MyText
+  user_id: 
+  area_id: 
+  avalanche: false
+  run_id: 
+
+two:
+  new_snow: 1
+  quality: MyString
+  description: MyText
+  user_id: 
+  area_id: 
+  avalanche: false
+  run_id: 

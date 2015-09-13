@@ -23,13 +23,15 @@ module FetcherUtils
 
     grams.each do |gram|
       # Add only unique instagrams to db
-      if not InstagramImage.where(:instagram_id => gram['instagram_id'])
+      begin
         InstagramImage.create(
             standard_resolution_url: gram['standard_resolution'],
             thumb_nail_url: gram['thumb_nail'],
             instagram_id: gram['instagram_id'],
             area: area
         )
+      rescue ActiveRecord::RecordNotUnique
+        next
       end
     end
   end
