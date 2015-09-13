@@ -33,6 +33,7 @@ class V1::AreasController < V1::BaseController
         lat: area.lat, long: area.long,
         grams: grams, id: area.id, comments: comments,
         current_user_id: current_user.id,
+        runs: area.runs, directions: area.directions,
         current_condition: current_condition
     }
     render json: @area

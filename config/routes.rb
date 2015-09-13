@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   api_version(:module => "butteskier", :path => {:value => "skiapp"}) do
   end
   #need this to work for API-only backend

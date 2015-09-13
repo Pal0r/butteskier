@@ -1,3 +1,13 @@
 <div>
-    Directions: From Mt Bachelor Nordic Center, head south on the Cascade Lakes highway approc 2.5 miles. Area on right directly off road.
+    <h3>About</h3>
+    {{area.description}}
+    <h3>Directions</h3>
+    {{area.directions}}
+    <div ng-if="area.runs.length">
+        <h3>Runs</h3>
+        <div ng-repeat="run in area.runs">
+            <h5>{{run.name}}</h5>
+            <p>{{run.description}}</p>
+        </div>
+    </div>
 </div>
