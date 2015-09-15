@@ -5,7 +5,8 @@ app = angular.module('app', [
   'uiGmapgoogle-maps', //angular-gmaps
   'formly', //angular forms
   'formlyBootstrap',
-  'angular-skycons' //Icons for area weather
+  'angular-skycons', //Icons for area weather
+  'ngMaterial'
   ]);
 
 $(document).ready(function(){
