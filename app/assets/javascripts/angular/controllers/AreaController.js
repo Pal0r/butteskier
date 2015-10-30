@@ -1,6 +1,6 @@
 angular.module('app').controller("AreaController",
-    ['$location', '$scope', 'AuthService', '$stateParams', 'areaFactory', 'weatherFactory', '$timeout',
-      function ($location, $scope, AuthService, $stateParams, areaFactory, weatherFactory, $timeout){
+    ['$location', '$scope', 'AuthService', '$stateParams', 'areaFactory', 'weatherFactory', '$timeout', '$http',
+      function ($location, $scope, AuthService, $stateParams, areaFactory, weatherFactory, $timeout, $http){
         if(!AuthService.isLoggedIn()){
           AuthService.setPageTryingToAccess();
           return $location.path('/sign_in');
@@ -31,6 +31,12 @@ angular.module('app').controller("AreaController",
             img.visible = false;
           });
           area.grams[imageIndex].visible = true;
+        };
+        $scope.deleteReport = function(report_id, reportIndex){
+          $http.delete('/v1/reports/' + report_id)
+            .success(function(response){
+              $scope.area.reports.splice(reportIndex, 1);
+            })
         };
       }
     ]);

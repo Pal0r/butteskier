@@ -58,7 +58,8 @@ class V1::AreasController < V1::BaseController
             runs: area.runs,
             current_condition: current_condition,
             reports: reports,
-            report_counts: report_counts
+            report_counts: report_counts,
+            current_user_id: current_user.id
         }
     )
     render json: @area

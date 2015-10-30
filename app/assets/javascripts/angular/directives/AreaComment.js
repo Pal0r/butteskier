@@ -14,14 +14,14 @@ angular.module('app').directive('areaComments',['$stateParams', '$http', functio
             // Since we cannot rely on accessor . reference for the username,
             // we have to construct the comment username here.
             response.comment.username = response.username;
-            scope.area.comments.push(response.comment)
+            scope.area.comments.push(response.comment);
+            // Reset the form upon successful post
+            scope.commentFormData = {};
           })
       };
       scope.deleteComment = function(comment_id, commentIndex){
         $http.delete('/v1/comments/' + comment_id)
           .success(function(response){
-            scope.area.comments.splice(commentIndex, 1);
-            // TODO: Clear form after success
           })
       };
       scope.commentFields = [

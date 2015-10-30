@@ -2,8 +2,17 @@
     <h3>Reports <small>Area conditions & general observations</small></h3>
     <hr>
     <div ng-repeat="report in area.reports">
-        <h5>{{report.run_name}} <small>{{report.created_at | date: 'MMM d, y h:mm a'}}</small></h5>
-        <div>{{report.description}}</div>
+        <h5>{{report.run_name}}
+            <small>{{report.created_at | date: 'MMM d, y h:mm a'}}</small>
+            <span ng-if="report.avalanche"> Avalanche Sighted</span>
+            <span ng-if="report.new_snow">{{report.new_snow}}'' of new snow</span>
+            <a href="#" ng-if="report.user_id == area.current_user_id" ng-click="deleteReport(report.id, $index)" class="font-weight-400" style="color: slategrey; cursor: hand;" data-toggle="tooltip" title="Delete Report?">&#10005;</a>
+        </h5>
+
+        <div>
+            {{report.description}}<br>
+            Snow Quality: {{report.quality}}
+        </div>
         - by {{report.username}}
     </div>
 </div>

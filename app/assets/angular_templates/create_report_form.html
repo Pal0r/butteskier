@@ -1,5 +1,7 @@
 <div class="col-md-8">
-    <formly-form action="/v1/reports" method="post" fields="reportFields">
-        <button type="submit">Submit</button>
-    </formly-form>
+    <form class="well" ng-submit="submitReport()">
+        <formly-form fields="reportFields" form="reportForm" model="reportFormData">
+            <button type="submit" class="btn btn-default" ng-disabled="reportForm.$invalid">Submit</button>
+        </formly-form>
+    </form>
 </div>
