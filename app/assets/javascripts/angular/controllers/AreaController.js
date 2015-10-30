@@ -38,5 +38,12 @@ angular.module('app').controller("AreaController",
               $scope.area.reports.splice(reportIndex, 1);
             })
         };
+        // TODO: This has not been enabled in the view
+        $scope.deleteRun = function(run_id, runIndex){
+          $http.delete('/v1/runs/' + run_id)
+            .success(function(){
+              $scope.area.runs.splice(runIndex, 1);
+            })
+        };
       }
     ]);

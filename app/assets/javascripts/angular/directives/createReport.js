@@ -1,4 +1,4 @@
-angular.module('app').directive('createReport',['$stateParams', '$http', function($stateParams, $http){
+angular.module('app').directive('createReport',['$stateParams', '$http', 'runFactory', function($stateParams, $http, runFactory){
   return{
     restrict: 'A',
     replace: true,
@@ -16,6 +16,24 @@ angular.module('app').directive('createReport',['$stateParams', '$http', functio
             scope.reportFormData = {}
           })
       };
+      // Add area runs to the select field options
+      runFactory.getAreaRuns($stateParams.areaID).then(function(response){
+        var options = [];
+        angular.forEach(response.data, function(run){
+          options.push({value: run.id, name: run.name})
+        });
+        var selectField = {
+          key: 'runs',
+          type: 'select',
+          templateOptions: {
+            label: 'Run',
+            options: options,
+            Placeholder: 'Create a run'
+          }
+        };
+        // Wait for promise event before adding response data
+        scope.reportFields.unshift(selectField);
+      });
       scope.reportFields = [
         {
           key: 'new_snow',
