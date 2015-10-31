@@ -23,7 +23,7 @@ angular.module('app').directive('createReport',['$stateParams', '$http', 'runFac
           options.push({value: run.id, name: run.name})
         });
         var selectField = {
-          key: 'runs',
+          key: 'run_id',
           type: 'select',
           templateOptions: {
             label: 'Run',
