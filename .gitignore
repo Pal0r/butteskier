@@ -35,3 +35,6 @@ config/database.yml
 # sublime files
 *.sublime*
 .idea/
+
+# Vagrant box
+package.box
