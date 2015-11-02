@@ -17,18 +17,18 @@ ActiveRecord::Schema.define(version: 20150913055544) do
   enable_extension "plpgsql"
 
   create_table "areas", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.string   "description",  limit: 255
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "instagram_id"
-    t.string   "lat",          limit: 255
-    t.string   "long",         limit: 255
+    t.string   "lat"
+    t.string   "long"
     t.text     "directions"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string   "comment_body",     limit: 255
+    t.string   "comment_body"
     t.text     "comment_headline"
     t.integer  "user_id"
     t.integer  "area_id"
@@ -40,13 +40,13 @@ ActiveRecord::Schema.define(version: 20150913055544) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "instagram_images", force: :cascade do |t|
-    t.string   "url",                     limit: 255
+    t.string   "url"
     t.integer  "area_id"
-    t.string   "standard_resolution_url", limit: 255
-    t.string   "thumb_nail_url",          limit: 255
+    t.string   "standard_resolution_url"
+    t.string   "thumb_nail_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "instagram_id",            limit: 255
+    t.string   "instagram_id"
   end
 
   add_index "instagram_images", ["area_id"], name: "index_instagram_images_on_area_id", using: :btree
@@ -79,20 +79,20 @@ ActiveRecord::Schema.define(version: 20150913055544) do
   add_index "runs", ["area_id"], name: "index_runs_on_area_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "authentication_token",   limit: 255
-    t.string   "username",               limit: 255
+    t.string   "authentication_token"
+    t.string   "username"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", using: :btree
