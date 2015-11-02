@@ -41,6 +41,12 @@ gem 'underscore-rails'
 #API Versioning
 gem 'versionist', '~> 1.3.0'
 
+#Secure yml
+gem 'figaro'
+
+#Application server
+gem 'puma'
+
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl', '~> 4.4.0'
@@ -51,6 +57,11 @@ group :development do
   gem 'better_errors'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
 
 group :production do
