@@ -15,7 +15,7 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
-/bin
+
 # Make a copy from the templates and use it localy
 config/secrets.yml
 config/database.yml
