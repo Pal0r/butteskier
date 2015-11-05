@@ -1,0 +1,98 @@
+I, [2015-11-04T18:29:05.994269 #23365]  INFO -- : Refreshing Gem list
+DEPRECATION WARNING: The configuration option `config.serve_static_assets` has been renamed to `config.serve_static_files` to clarify its role (it merely enables serving everything in the `public` folder and is unrelated to the asset pipeline). The `serve_static_assets` alias will be removed in Rails 5.0. Please migrate your configuration files accordingly. (called from block in <top (required)> at /home/ubuntu/butteskier/config/environments/production.rb:23)
+/home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activerecord-4.2.4/lib/active_record/connection_adapters/connection_specification.rb:248:in `resolve_symbol_connection': 'production' database is not configured. Available: ["development"] (ActiveRecord::AdapterNotSpecified)
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activerecord-4.2.4/lib/active_record/connection_adapters/connection_specification.rb:211:in `resolve_connection'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activerecord-4.2.4/lib/active_record/connection_adapters/connection_specification.rb:139:in `resolve'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activerecord-4.2.4/lib/active_record/connection_adapters/connection_specification.rb:169:in `spec'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activerecord-4.2.4/lib/active_record/connection_handling.rb:50:in `establish_connection'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activerecord-4.2.4/lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activesupport-4.2.4/lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activesupport-4.2.4/lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activesupport-4.2.4/lib/active_support/lazy_load_hooks.rb:28:in `block in on_load'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activesupport-4.2.4/lib/active_support/lazy_load_hooks.rb:27:in `each'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activesupport-4.2.4/lib/active_support/lazy_load_hooks.rb:27:in `on_load'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/activerecord-4.2.4/lib/active_record/railtie.rb:116:in `block in <class:Railtie>'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/initializable.rb:30:in `instance_exec'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/initializable.rb:30:in `run'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:226:in `block in tsort_each'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:348:in `block (2 levels) in each_strongly_connected_component'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:429:in `each_strongly_connected_component_from'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:347:in `block in each_strongly_connected_component'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `each'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `call'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `each_strongly_connected_component'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:224:in `tsort_each'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/2.2.0/tsort.rb:203:in `tsort_each'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/initializable.rb:54:in `run_initializers'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/application.rb:352:in `initialize!'
+	from /home/ubuntu/butteskier/config/environment.rb:5:in `<top (required)>'
+	from config.ru:4:in `require'
+	from config.ru:4:in `block in <main>'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+	from config.ru:1:in `new'
+	from config.ru:1:in `<main>'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/unicorn-5.0.0/lib/unicorn.rb:46:in `eval'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/unicorn-5.0.0/lib/unicorn.rb:46:in `block in builder'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:752:in `call'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:752:in `build_app!'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:129:in `start'
+	from /home/ubuntu/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/unicorn-5.0.0/bin/unicorn:126:in `<top (required)>'
+	from /home/ubuntu/.rbenv/versions/2.2.1/bin/unicorn:23:in `load'
+	from /home/ubuntu/.rbenv/versions/2.2.1/bin/unicorn:23:in `<main>'
+I, [2015-11-04T18:33:49.145977 #23527]  INFO -- : Refreshing Gem list
+DEPRECATION WARNING: The configuration option `config.serve_static_assets` has been renamed to `config.serve_static_files` to clarify its role (it merely enables serving everything in the `public` folder and is unrelated to the asset pipeline). The `serve_static_assets` alias will be removed in Rails 5.0. Please migrate your configuration files accordingly. (called from block in <top (required)> at /home/ubuntu/butteskier/config/environments/production.rb:23)
+I, [2015-11-04T18:33:50.705507 #23527]  INFO -- : listening on addr=/home/ubuntu/butteskier/shared/sockets/unicorn.sock fd=10
+I, [2015-11-04T18:33:50.705626 #23527]  INFO -- : worker=0 spawning...
+I, [2015-11-04T18:33:50.706870 #23527]  INFO -- : worker=1 spawning...
+I, [2015-11-04T18:33:50.709075 #23527]  INFO -- : master process ready
+I, [2015-11-04T18:33:50.717732 #23533]  INFO -- : worker=1 spawned pid=23533
+I, [2015-11-04T18:33:50.717880 #23533]  INFO -- : worker=1 ready
+I, [2015-11-04T18:33:50.707452 #23530]  INFO -- : worker=0 spawned pid=23530
+I, [2015-11-04T18:33:50.718138 #23530]  INFO -- : worker=0 ready
+I, [2015-11-04T19:52:04.224366 #23527]  INFO -- : reaped #<Process::Status: pid 23530 exit 0> worker=0
+I, [2015-11-04T19:52:04.224494 #23527]  INFO -- : reaped #<Process::Status: pid 23533 exit 0> worker=1
+I, [2015-11-04T19:52:04.224554 #23527]  INFO -- : master complete
+I, [2015-11-04T19:56:20.478148 #26355]  INFO -- : Refreshing Gem list
+DEPRECATION WARNING: The configuration option `config.serve_static_assets` has been renamed to `config.serve_static_files` to clarify its role (it merely enables serving everything in the `public` folder and is unrelated to the asset pipeline). The `serve_static_assets` alias will be removed in Rails 5.0. Please migrate your configuration files accordingly. (called from block in <top (required)> at /home/ubuntu/butteskier/config/environments/production.rb:23)
+I, [2015-11-04T19:56:21.950923 #26355]  INFO -- : unlinking existing socket=/home/ubuntu/butteskier/shared/sockets/unicorn.sock
+I, [2015-11-04T19:56:21.951065 #26355]  INFO -- : listening on addr=/home/ubuntu/butteskier/shared/sockets/unicorn.sock fd=10
+I, [2015-11-04T19:56:21.951162 #26355]  INFO -- : worker=0 spawning...
+I, [2015-11-04T19:56:21.952521 #26355]  INFO -- : worker=1 spawning...
+I, [2015-11-04T19:56:21.953069 #26358]  INFO -- : worker=0 spawned pid=26358
+I, [2015-11-04T19:56:21.953195 #26358]  INFO -- : worker=0 ready
+I, [2015-11-04T19:56:21.953986 #26355]  INFO -- : master process ready
+I, [2015-11-04T19:56:21.960946 #26361]  INFO -- : worker=1 spawned pid=26361
+I, [2015-11-04T19:56:21.961055 #26361]  INFO -- : worker=1 ready
+I, [2015-11-04T20:09:30.722259 #26544]  INFO -- : executing ["/home/ubuntu/.rbenv/versions/2.2.1/bin/unicorn", "-c", "config/unicorn.rb", "-E", "production", "-D", {10=>#<Kgio::UNIXServer:/home/ubuntu/butteskier/shared/sockets/unicorn.sock>}] (in /home/ubuntu/butteskier)
+I, [2015-11-04T20:09:30.722391 #26544]  INFO -- : forked child re-executing...
+I, [2015-11-04T20:09:31.015956 #26544]  INFO -- : inherited addr=/home/ubuntu/butteskier/shared/sockets/unicorn.sock fd=10
+I, [2015-11-04T20:09:31.016174 #26544]  INFO -- : Refreshing Gem list
+DEPRECATION WARNING: The configuration option `config.serve_static_assets` has been renamed to `config.serve_static_files` to clarify its role (it merely enables serving everything in the `public` folder and is unrelated to the asset pipeline). The `serve_static_assets` alias will be removed in Rails 5.0. Please migrate your configuration files accordingly. (called from block in <top (required)> at /home/ubuntu/butteskier/config/environments/production.rb:23)
+I, [2015-11-04T20:09:32.478408 #26544]  INFO -- : worker=0 spawning...
+I, [2015-11-04T20:09:32.479735 #26544]  INFO -- : worker=1 spawning...
+I, [2015-11-04T20:09:32.481092 #26544]  INFO -- : master process ready
+I, [2015-11-04T20:09:32.480362 #26548]  INFO -- : worker=0 spawned pid=26548
+I, [2015-11-04T20:09:32.481353 #26548]  INFO -- : worker=0 ready
+I, [2015-11-04T20:09:32.481974 #26551]  INFO -- : worker=1 spawned pid=26551
+I, [2015-11-04T20:09:32.482088 #26551]  INFO -- : worker=1 ready
+E, [2015-11-04T20:10:48.606929 #26544] ERROR -- : old PID:26355 running with existing pid=/home/ubuntu/butteskier/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-11-04T20:11:29.347791 #26544] ERROR -- : old PID:26355 running with existing pid=/home/ubuntu/butteskier/shared/pids/unicorn.pid.oldbin, refusing rexec
+I, [2015-11-04T20:13:07.147009 #26544]  INFO -- : reaped #<Process::Status: pid 26548 exit 0> worker=0
+I, [2015-11-04T20:13:07.147225 #26544]  INFO -- : reaped #<Process::Status: pid 26551 exit 0> worker=1
+I, [2015-11-04T20:13:07.147343 #26544]  INFO -- : master complete
+I, [2015-11-04T20:13:16.826052 #26706]  INFO -- : Refreshing Gem list
+DEPRECATION WARNING: The configuration option `config.serve_static_assets` has been renamed to `config.serve_static_files` to clarify its role (it merely enables serving everything in the `public` folder and is unrelated to the asset pipeline). The `serve_static_assets` alias will be removed in Rails 5.0. Please migrate your configuration files accordingly. (called from block in <top (required)> at /home/ubuntu/butteskier/config/environments/production.rb:23)
+I, [2015-11-04T20:13:18.283600 #26706]  INFO -- : unlinking existing socket=/home/ubuntu/butteskier/shared/sockets/unicorn.sock
+I, [2015-11-04T20:13:18.283901 #26706]  INFO -- : listening on addr=/home/ubuntu/butteskier/shared/sockets/unicorn.sock fd=10
+I, [2015-11-04T20:13:18.284053 #26706]  INFO -- : worker=0 spawning...
+I, [2015-11-04T20:13:18.285516 #26706]  INFO -- : worker=1 spawning...
+I, [2015-11-04T20:13:18.286237 #26706]  INFO -- : master process ready
+I, [2015-11-04T20:13:18.293080 #26709]  INFO -- : worker=0 spawned pid=26709
+I, [2015-11-04T20:13:18.293285 #26709]  INFO -- : worker=0 ready
+I, [2015-11-04T20:13:18.293915 #26711]  INFO -- : worker=1 spawned pid=26711
+I, [2015-11-04T20:13:18.294094 #26711]  INFO -- : worker=1 ready
+I, [2015-11-04T20:31:48.080263 #26706]  INFO -- : reaped #<Process::Status: pid 26709 exit 0> worker=0
+I, [2015-11-04T20:31:48.080428 #26706]  INFO -- : reaped #<Process::Status: pid 26711 exit 0> worker=1
+I, [2015-11-04T20:31:48.080498 #26706]  INFO -- : master complete

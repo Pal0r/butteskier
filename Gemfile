@@ -46,6 +46,7 @@ gem 'figaro'
 
 #Application server
 gem 'puma'
+gem 'unicorn'
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
