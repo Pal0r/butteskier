@@ -45,7 +45,6 @@ gem 'versionist', '~> 1.3.0'
 gem 'figaro'
 
 #Application server
-gem 'puma'
 gem 'unicorn'
 
 group :test do
@@ -58,11 +57,6 @@ group :development do
   gem 'better_errors'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
 end
 
 group :production do
@@ -74,7 +68,6 @@ end
 #authentication
 gem 'devise'
 gem 'simple_token_authentication'
-
 gem 'angular_rails_csrf'
 
 

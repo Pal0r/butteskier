@@ -296,6 +296,3 @@ DEPENDENCIES
   underscore-rails
   unicorn
   versionist (~> 1.3.0)
-
-BUNDLED WITH
-   1.10.6
