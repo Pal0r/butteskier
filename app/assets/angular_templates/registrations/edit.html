@@ -4,7 +4,12 @@
 		    <form class="well" ng-submit="submitUserEditForm()">
 		        <formly-form fields="userFields" form="userForm" model="userFormData">
 		            <button type="submit" class="btn btn-default" ng-disabled="userForm.$invalid">Submit</button>
-		            <!-- <button class="btn btn-danger" ng-click="deleteUser()">Delete Account</button> -->
+		            <span class="btn btn-danger" ng-click="delete = 'true'">Delete Account</span>
+		            <div ng-if="delete == 'true'" class="well margin-t-md">
+		            	<h5>Are you sure?</h5>
+		            	Deleting your account will result in the loss of all associated data
+		            	<span class="btn btn-danger" ng-click="deleteUser()">Delete Account</span>
+		            </div>
 		        </formly-form>
 		    </form>
 		</div>

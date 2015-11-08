@@ -8,6 +8,16 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def destroy
+    user_id = current_user.id
+    Comment.where(user: user_id).destroy_all
+    Report.where(user: user_id).destroy_all
+    User.find(user_id).delete
+
+    # render :status => 200
+    render :json => {:data => params}
+  end
+
   def update
     @user = User.find(params[:id])
     @user.update_columns(params.permit(:username))

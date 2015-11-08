@@ -1,6 +1,6 @@
 angular.module('app').controller("EditUserController",
-  ['$scope', '$rootScope', 'AuthService', '$http', '$location',
-  function ($scope, $rootScope, AuthService, $http, $location) {
+  ['$scope', '$rootScope', 'AuthService', '$http', '$location', '$state', '$window',
+  function ($scope, $rootScope, AuthService, $http, $location, $state, $window) {
       var currentUser = AuthService.user;
       // Hide the ui-view blur background
       $scope.hideBackground = false;
@@ -20,10 +20,13 @@ angular.module('app').controller("EditUserController",
       // TODO: This should actually launch a confirmation modal.
       // Also upon deletion, we should delete all the user's records.
       $scope.deleteUser = function(){
-        $http.delete('/users', currentUser.id)
+        $http.delete('/users')
         .success(function(){
           // Destroy session if successful
           AuthService.logout()
+          // Redirect to index
+          $state.go('homeState');
+          $window.location.reload();
         })
       };
       $scope.userFields = [
