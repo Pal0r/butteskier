@@ -19,9 +19,9 @@ angular.module('app').controller("LoginController",
       AuthService.login(credentials,
         function(res) {
           $scope.user.isLoggedIn = true;
+          // Set username on the parent scope as this
+          // is displayed in the main app controller on load.
           $scope.$parent.userName = res.username;
-          console.log('username: '+$scope.userName)
-          console.log(res)
           $location.path(urlToGoToAfterLogin.url);
           urlToGoToAfterLogin.url = '/';
         },
