@@ -12,7 +12,8 @@ angular.module('app').controller("SignUpController",
         user: {
           email: $scope.email,
           password: $scope.password,
-          password_confirmation: $scope.password_confirmation
+          password_confirmation: $scope.password_confirmation,
+          username: $scope.username
         }
       };
 

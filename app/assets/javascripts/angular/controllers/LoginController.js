@@ -19,6 +19,9 @@ angular.module('app').controller("LoginController",
       AuthService.login(credentials,
         function(res) {
           $scope.user.isLoggedIn = true;
+          $scope.$parent.userName = res.username;
+          console.log('username: '+$scope.userName)
+          console.log(res)
           $location.path(urlToGoToAfterLogin.url);
           urlToGoToAfterLogin.url = '/';
         },

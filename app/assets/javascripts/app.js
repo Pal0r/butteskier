@@ -46,6 +46,11 @@ app.config(['$stateProvider','$urlRouterProvider',
         templateUrl: 'registrations/new.html',
         controller : 'SignUpController'
       })
+      .state('editUserState',{
+        url: '/edit_user',
+        templateUrl: 'registrations/edit.html',
+        controller : 'EditUserController'
+      })
 
     $locationProvider.html5Mode({
       enabled: true,
