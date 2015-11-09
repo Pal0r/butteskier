@@ -10,6 +10,7 @@ class V1::AreasController < V1::BaseController
     area.comments.eager_load(:user).each do |comment|
       c = comment.as_json
       c['username'] = comment.user.username
+      c['user_img'] = comment.user.profile_img
       comments.append(c)
     end
 

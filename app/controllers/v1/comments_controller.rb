@@ -6,9 +6,11 @@ class V1::CommentsController < V1::BaseController
         user_id: current_user.id,
         area_id: params[:areaID]
     )
-    username = comment.user.username
+    comment_hash = comment.as_json
+    comment_hash[:username] = comment.user.username
+    comment_hash[:user_img] = comment.user.profile_img
 
-    render :json => {:comment => comment, :username => username}
+    render :json => {:comment => comment_hash}
   end
 
   def destroy

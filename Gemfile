@@ -47,6 +47,10 @@ gem 'figaro'
 #Application server
 gem 'unicorn'
 
+#AWS SDK 
+gem 'aws-sdk', '~> 1'
+gem 'aws-sdk-core'
+
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl', '~> 4.4.0'

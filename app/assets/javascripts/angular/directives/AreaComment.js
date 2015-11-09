@@ -11,9 +11,6 @@ angular.module('app').directive('areaComments',['$stateParams', '$http', functio
       scope.submitComment = function(){
         $http.post('/v1/comments', scope.commentFormData)
           .success(function(response){
-            // Since we cannot rely on accessor . reference for the username,
-            // we have to construct the comment username here.
-            response.comment.username = response.username;
             scope.area.comments.push(response.comment);
             // Reset the form upon successful post
             scope.commentFormData = {};
@@ -22,6 +19,7 @@ angular.module('app').directive('areaComments',['$stateParams', '$http', functio
       scope.deleteComment = function(comment_id, commentIndex){
         $http.delete('/v1/comments/' + comment_id)
           .success(function(response){
+            scope.area.comments.splice(commentIndex, 1)
           })
       };
       scope.commentFields = [
@@ -29,17 +27,16 @@ angular.module('app').directive('areaComments',['$stateParams', '$http', functio
           key: 'comment_headline',
           type: 'input',
           templateOptions: {
-            label: 'Comment Headline',
-            required: true
+            label: 'Headline',
+            placeholder: "What's this spot like?"
           }
         },
         {
           key: 'comment_body',
           type: 'textarea',
           templateOptions: {
-            label: "How'd it go today?",
-            placeholder: 'Tell us about your day. Faceshots? Avy conditions? etc.',
-            required: true
+            label: "Describe the area",
+            placeholder: 'Tell us about the area. Better approach? What are the best days to visit?'
           }
         }
       ];

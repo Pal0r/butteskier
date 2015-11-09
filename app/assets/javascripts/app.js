@@ -6,7 +6,7 @@ app = angular.module('app', [
   'formly', //angular forms
   'formlyBootstrap',
   'angular-skycons', //Icons for area weather
-  'ngMaterial'
+  'lr.upload'
   ]);
 
 $(document).ready(function(){

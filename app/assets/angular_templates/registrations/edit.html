@@ -12,6 +12,20 @@
 		            </div>
 		        </formly-form>
 		    </form>
+		    <div class="well">
+		    	<div class="col-md-2">
+		    		<img ng-if="!user.profile_img" height="50" width="50" ng-src="images/blank_user_image.png">
+		    		<img ng-if="user.profile_img" height="50" width="50" ng-src="{{user.profile_img}}">
+		    	</div>
+		    	<div class="col-mid-7">
+					<div upload-button
+						on-success="uploadOnSuccess(response)"
+		  				url="/v1/uploads">
+		  				<label>Upload profile Image</label>
+		  			</div>
+		    	</div> 
+		    </div>
+		    
 		</div>
     </div>
 </div>

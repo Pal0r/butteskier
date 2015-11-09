@@ -11,7 +11,7 @@
 //= require bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap
 //= require bower_components/angular-animate/angular-animate
 //= require bower_components/angular-aria/angular-aria
-//= require bower_components/angular-material/angular-material
+//= require bower_components/angular-upload/angular-upload
 //= require angular-skycons.min
 //= require angular-google-maps.min
 //= require gmaps
