@@ -12,7 +12,16 @@
     </div>
 </div>
 <div class="row">
-    <div class="pad-all-lg margin-b-lg col-xs-6">
+    <div class="pad-all-lg margin-b-lg col-xs-5">
         <div area-comments></div>
+    </div>
+    <div class="pad-all-lg margin-b-lg col-xs-5">
+        <div ng-if="area.runs.length">
+            <h3>Runs</h3>
+            <div class="well" ng-repeat="run in area.runs">
+                <h5>{{run.name}}</h5>
+                <p>{{run.description}}</p>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,14 +1,14 @@
 <div>
-    <span class="font-size-lg font-weight-600">Area Commentary</span>
+    <h3>Area Commentary</h3>
     <div ng-repeat="comment in area.comments">
         <div class="well">
             <h5>{{comment.comment_headline}} - <small>{{comment.created_at | date : format : 'short'}}</small>
                 <a href="#" ng-if="comment.user_id == area.current_user_id" ng-click="deleteComment(comment.id, $index)" class="font-weight-400" style="cursor: hand;" data-toggle="tooltip" title="Delete Comment?">&#10005;</a>
             </h5>
             <div ng-bind="comment.comment_body"></div>
-            <img ng-if="comment.user_img" ng-src="{{comment.user_img}}" height="50" width="50">
-            <img ng-if="!comment.user_img" ng-src="/images/blank_user_image.png" height="50" width="50">
-                <span>{{comment.username}}</span><br>
+            <img class="circular-img" ng-if="comment.user_img" ng-src="{{comment.user_img}}" height="50" width="50">
+            <img class="circular-img" ng-if="!comment.user_img" ng-src="/images/blank_user_image.png" height="50" width="50">
+            <span>{{comment.username}}</span><br>
         </div>
     </div>
     <span ng-click="showCommentForm = !showCommentForm">

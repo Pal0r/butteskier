@@ -101,6 +101,7 @@ li {list-style-type: none;}
 /* Misc */
 .angular-google-map-container { height: 800px;}
 .modal {z-index: 1000;}
+.circular-img {-moz-border-radius: 30px; border-radius: 30px;}
 
 /* Area Style */
 #area-container {height: 100%; overflow: auto;}
