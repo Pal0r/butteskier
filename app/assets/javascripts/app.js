@@ -51,6 +51,12 @@ app.config(['$stateProvider','$urlRouterProvider',
         templateUrl: 'registrations/edit.html',
         controller : 'EditUserController'
       })
+      // Meet ups
+      .state('meetupState',{
+        url: '/meetup',
+        templateUrl: 'meetups/meetups.html',
+        controller: 'MeetupController'
+      })
 
     $locationProvider.html5Mode({
       enabled: true,

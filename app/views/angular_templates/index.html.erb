@@ -4,6 +4,17 @@
       <div class="container">
         <div class="navbar-header">
           <a ui-sref='homeState' class="navbar-brand">Butte Skier</a>
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Areas <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li ng-repeat="area in areas" role="presentation" class="pad-all-md">
+                  <a ui-sref="areaState({ areaID: area.id })">{{area.name}}</a>
+              </li>
+              </ul>
+            </li>
+            <li><a ui-sref="meetupState">Meetups</a></li>
+          </ul>
         </div>
         <span ng-if="user.isLoggedIn" class="navbar-text navbar-right navbar-link">Signed in as
           <a href="#" class="navbar-link" ui-sref='editUserState' ng-model="userName">{{userName}}</a>
@@ -15,7 +26,6 @@
         </span>
       </div>
     </nav>
-    <div ng-include="'shared/sidebar.html'"></div>
     <div map-display></div>
     <div id="view-container" ng-class="{'hidden': hideBackground}"ui-view></div>
   </div>

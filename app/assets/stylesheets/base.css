@@ -71,7 +71,7 @@ li {list-style-type: none;}
 .navbar-default {margin-bottom: 0;}
 
 /* Sidebar Nav */
-#slideout-inner, #slideout-toggle, #view-container, .navbar{background: rgba(225, 225, 225, .8);  }
+#slideout-inner, #slideout-toggle, #view-container, .navbar, .dropdown-menu {background: rgba(225, 225, 225, .8);  }
 #slideout-inner, #slideout-toggle, #view-container{height: 100%;}
 #slideout, #slideout-inner{
     position: fixed;
