@@ -11,7 +11,7 @@ angular.module('app').directive('areaComments',['$stateParams', '$http', functio
       scope.submitComment = function(){
         $http.post('/v1/comments', scope.commentFormData)
           .success(function(response){
-            scope.area.comments.push(response.comment);
+            scope.area.comments.unshift(response.comment);
             // Reset the form upon successful post
             scope.commentFormData = {};
           })

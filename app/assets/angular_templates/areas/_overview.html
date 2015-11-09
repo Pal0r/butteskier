@@ -13,14 +13,25 @@
 </div>
 <div class="row">
     <div class="pad-all-lg margin-b-lg col-xs-5">
+        <h3>Area Commentary<small>
+            <span ng-click="showCommentForm = !showCommentForm">
+                <a href="#" class="btn btn-default" ng-if="!showCommentForm">Add Comment</a>
+                <a href="#" class="btn btn-default" ng-if="showCommentForm">Hide Comment Form</a>
+            </span>
+            </small>
+        </h3>
         <div area-comments></div>
     </div>
     <div class="pad-all-lg margin-b-lg col-xs-5">
         <div ng-if="area.runs.length">
-            <h3>Runs</h3>
-            <div class="well" ng-repeat="run in area.runs">
-                <h5>{{run.name}}</h5>
-                <p>{{run.description}}</p>
+            <h3>Runs 
+                <a href="#addRun" class="btn btn-default" aria-controls="addRun" role="tab" data-toggle="tab">Add Run</a>
+            </h3>
+            <div class="commentary-container">
+                <div class="well" ng-repeat="run in area.runs">
+                    <h5>{{run.name}}</h5>
+                    <p>{{run.description}}</p>
+                </div>
             </div>
         </div>
     </div>

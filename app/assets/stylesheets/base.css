@@ -106,6 +106,7 @@ li {list-style-type: none;}
 /* Area Style */
 #area-container {height: 100%; overflow: auto;}
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {background-color: transparent;}
+.commentary-container {max-height: 500px; overflow: auto;}
 /* Comment Style */
 .comment-headline{font-weight: 400; font-size: medium; color: darkgoldenrod;}
 .comment-body {color: grey;}
