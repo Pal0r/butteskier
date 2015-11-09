@@ -14,8 +14,7 @@ class RegistrationsController < Devise::RegistrationsController
     Report.where(user: user_id).destroy_all
     User.find(user_id).delete
 
-    # render :status => 200
-    render :json => {:data => params}
+    render :status => 200, json => {:data => params}
   end
 
   def update
