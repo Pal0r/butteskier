@@ -1,5 +1,3 @@
-# TODO: Updats this to reflect Reports
-
 class V1::ReportsController < V1::BaseController
   def create
     report = Report.create(

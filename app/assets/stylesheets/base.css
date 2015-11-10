@@ -112,3 +112,5 @@ li {list-style-type: none;}
 .comment-body {color: grey;}
 /* Calendar */
 #calendar {background: rgba(225, 225, 225, .8)}
+#event-container {height: 600px; overflow: auto;}
+#event-container a {color: #000;}

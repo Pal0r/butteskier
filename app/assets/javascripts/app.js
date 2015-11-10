@@ -59,6 +59,11 @@ app.config(['$stateProvider','$urlRouterProvider',
         templateUrl: 'events/events.html',
         controller: 'EventController'
       })
+      .state('eventDetailState',{
+        url: '/meetup/detail/:eventID',
+        templateUrl: 'events/detail.html',
+        controller: 'EventDetailController'
+      })
 
     $locationProvider.html5Mode({
       enabled: true,

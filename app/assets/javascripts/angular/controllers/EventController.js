@@ -1,14 +1,18 @@
 angular.module('app').controller("EventController",
-  ['$location', '$scope', 'AuthService', 'areaFactory',
-  function ($location, $scope, AuthService, areaFactory) {
+  ['$scope', 'AuthService', 'areaFactory', '$http', '$location',
+  function ($scope, AuthService, areaFactory, $http, $location) {
     // Hide the ui-view blur background
     $scope.hideBackground = false;
     $scope.user = AuthService.user
     $scope.eventFormData = {}
+
     $scope.submitEvent = function(){
-      console.log($scope.eventFormData)
-      // Clear form on success
-      $scope.eventFormData = {}
+      $http.post('/v1/events', $scope.eventFormData)
+        .success(function(response){
+          $scope.events.unshift(response.event)
+          // Clear form on success
+          $scope.eventFormData = {}
+        })
     }
     areaFactory.getAreas().then(function(response){
       var options = [];
@@ -28,16 +32,26 @@ angular.module('app').controller("EventController",
       $scope.eventFields.unshift(selectField);
     })
     $scope.eventFields = [
-        {
-          key: 'agenda',
-          type: 'textarea',
-          templateOptions: {
-            label: 'Agenda',
-            placeholder: "What's the plan?"
-          }
+      {
+        key: 'title',
+        type: 'input',
+        templateOptions: {
+          label: 'Mission',
+          placeholder: "Shreding? Millage?"
         }
-      ];
-
+      },
+      {
+        key: 'agenda',
+        type: 'textarea',
+        templateOptions: {
+          label: 'Agenda',
+          placeholder: "What's the plan?"
+        }
+      }
+    ];
+    $scope.onEventClick = function( event, jsEvent, view){
+        return $location.path('/meetup/detail/' + event.id)
+    };
 
     // Calendar Config
     $scope.uiConfig = {
@@ -47,17 +61,22 @@ angular.module('app').controller("EventController",
         header:{
           left: 'title',
           right: 'agendaDay, month, prev,next'
-        }
+        },
+        eventClick: $scope.onEventClick
       }
     };
-
-    $scope.events = [
-      {title: 'All Day Event',start: new Date()},
-      {title: 'Long Event',start: new Date(),end: new Date()},
-      {id: 999,title: 'Repeating Event',start: new Date(),allDay: false}
-    ];
-    $scope.eventSources = [
-      $scope.events
-    ];
+    $scope.events = [];
+    $scope.eventSources = [$scope.events];
+    // Populate Events
+    $http.get('/v1/events')
+    .then(function(response){
+      // Convert json rb datetime rep to js data obj
+      angular.forEach(response.data, function(event){
+        event['start'] = new Date(event.start)
+        $scope.events.push(event)
+      })
+       
+    })
+    
 }]);
 

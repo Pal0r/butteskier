@@ -9,8 +9,14 @@
                 	</span>
 				</small></h2>
 				<div class="well" ng-if="showEventForm" ng-include="'events/create_event.html'"></div>
-				<div ng-repeat="event in events" class="well">
-					{{event.title}}
+				<div id="event-container">
+					<div ng-repeat="event in events" class="well">
+						<a href="/meetup/detail/{{event.id}}">
+							<h4>{{event.title}} </h4>
+							<span>{{event.start | date: 'medium'}}</span><br/>
+							{{event.agenda}}
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
