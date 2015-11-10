@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   acts_as_token_authenticatable
   has_many :reports
   has_many :comments
+  has_many :events
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
