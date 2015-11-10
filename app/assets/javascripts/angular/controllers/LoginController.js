@@ -30,5 +30,13 @@ angular.module('app').controller("LoginController",
         }
       );
     }
+    $scope.events = [
+      {title: 'All Day Event',start: new Date()},
+      {title: 'Long Event',start: new Date(),end: new Date()},
+      {id: 999,title: 'Repeating Event',start: new Date(),allDay: false}
+    ];
+    $scope.eventSources = [
+      $scope.events
+    ];
 }]);
 

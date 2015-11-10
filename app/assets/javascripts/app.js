@@ -6,7 +6,8 @@ app = angular.module('app', [
   'formly', //angular forms
   'formlyBootstrap',
   'angular-skycons', //Icons for area weather
-  'lr.upload'
+  'lr.upload', // User image upload
+  'ui.calendar' // event calendar
   ]);
 
 $(document).ready(function(){
@@ -52,10 +53,10 @@ app.config(['$stateProvider','$urlRouterProvider',
         controller : 'EditUserController'
       })
       // Meet ups
-      .state('meetupState',{
+      .state('eventState',{
         url: '/meetup',
-        templateUrl: 'meetups/meetups.html',
-        controller: 'MeetupController'
+        templateUrl: 'events/events.html',
+        controller: 'EventController'
       })
 
     $locationProvider.html5Mode({

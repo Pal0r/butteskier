@@ -110,3 +110,5 @@ li {list-style-type: none;}
 /* Comment Style */
 .comment-headline{font-weight: 400; font-size: medium; color: darkgoldenrod;}
 .comment-body {color: grey;}
+/* Calendar */
+#calendar {background: rgba(225, 225, 225, .8)}
