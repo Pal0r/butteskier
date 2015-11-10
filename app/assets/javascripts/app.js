@@ -7,7 +7,8 @@ app = angular.module('app', [
   'formlyBootstrap',
   'angular-skycons', //Icons for area weather
   'lr.upload', // User image upload
-  'ui.calendar' // event calendar
+  'ui.calendar', // event calendar
+  'ui.bootstrap.datetimepicker'
   ]);
 
 $(document).ready(function(){

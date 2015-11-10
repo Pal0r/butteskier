@@ -2,7 +2,13 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="pad-l-lg">
-				<h2>Event Listing</h2>
+				<h2>Event Listing <small>
+					<span ng-click="showEventForm = !showEventForm">
+						<span ng-if="!showEventForm">&#43;</span>
+	                	<span ng-if="showEventForm">&#45;</span>
+                	</span>
+				</small></h2>
+				<div class="well" ng-if="showEventForm" ng-include="'events/create_event.html'"></div>
 				<div ng-repeat="event in events" class="well">
 					{{event.title}}
 				</div>

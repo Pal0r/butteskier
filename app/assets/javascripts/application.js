@@ -16,6 +16,7 @@
 //= require bower_components/angular-ui-calendar/src/calendar
 //= require bower_components/fullcalendar/dist/fullcalendar.min
 //= require bower_components/fullcalendar/dist/gcal
+//= require bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker
 //= require angular-skycons.min
 //= require angular-google-maps.min
 //= require gmaps
