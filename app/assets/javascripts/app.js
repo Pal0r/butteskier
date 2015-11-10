@@ -22,7 +22,6 @@ app.config(['$stateProvider','$urlRouterProvider',
             '$locationProvider', '$httpProvider',
   function($stateProvider, $urlRouterProvider,
            $locationProvider, $httpProvider){
-
     //unmatched routes redirect to root
     $urlRouterProvider.otherwise("/");
 
@@ -63,6 +62,11 @@ app.config(['$stateProvider','$urlRouterProvider',
         url: '/meetup/detail/:eventID',
         templateUrl: 'events/detail.html',
         controller: 'EventDetailController'
+      })
+      .state('aboutState',{
+        url: '/about',
+        templateUrl: 'about.html',
+        controller: 'AboutController'
       })
 
     $locationProvider.html5Mode({
