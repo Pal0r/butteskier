@@ -9,5 +9,7 @@ angular.module('app').controller("ImageController",
 	    $scope.hideBackground = false;
 	    instagramFactory.getImages().then(function(response){
 	    	$scope.images = response.data
+	    	// directive callback needs to wait until images are loaded
+	    	$scope.dataLoaded = true;
 	    });
 }]);

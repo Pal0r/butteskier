@@ -8,7 +8,8 @@ app = angular.module('app', [
   'angular-skycons', //Icons for area weather
   'lr.upload', // User image upload
   'ui.calendar', // event calendar
-  'ui.bootstrap.datetimepicker'
+  'ui.bootstrap.datetimepicker',
+  'slick' // Carousel
   ]);
 
 $(document).ready(function(){

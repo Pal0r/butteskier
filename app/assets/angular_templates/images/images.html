@@ -1,9 +1,12 @@
-<div class="container">
+<div class="pad-all-md">
 	<h3>Images</h3>
-	<label>Start</label>
-	
-</div>
-	<div ng-repeat="image in images|imagefilter:startDate:endDate">
-		<img ng-src="{{image.standard_resolution_url}}" height="700" width="700">
+	<div class="row">
+		<div class="col-md-offset-1">
+			<slick class="col-md-11" infinite="true" dots="true" slides-to-show="3" slides-to-scroll="3" init-onload="true" data="dataLoaded">
+				<div ng-repeat="image in images" >
+					<img ng-src="{{image.standard_resolution_url}}" height="270" width="270">
+				</div>
+			</slick>
+		</div>
 	</div>
 </div>
