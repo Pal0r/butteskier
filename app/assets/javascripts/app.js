@@ -8,7 +8,8 @@ app = angular.module('app', [
   'angular-skycons', //Icons for area weather
   'lr.upload', // User image upload
   'ui.calendar', // event calendar
-  'ui.bootstrap.datetimepicker'
+  'ui.bootstrap.datetimepicker',
+  'rzModule' // ng Slider
   ]);
 
 $(document).ready(function(){
@@ -63,10 +64,17 @@ app.config(['$stateProvider','$urlRouterProvider',
         templateUrl: 'events/detail.html',
         controller: 'EventDetailController'
       })
+      // About Butte Skier page
       .state('aboutState',{
         url: '/about',
         templateUrl: 'about.html',
         controller: 'AboutController'
+      })
+      // Instagram display page
+      .state('imageState',{
+        url: '/images',
+        templateUrl: 'images/images.html',
+        controller: 'ImageController'
       })
 
     $locationProvider.html5Mode({
