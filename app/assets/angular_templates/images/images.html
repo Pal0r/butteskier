@@ -1,7 +1,9 @@
 <div class="container">
 	<h3>Images</h3>
-    	<rzslider rz-slider-model="imageSlider"></rzslider>
-	<div ng-repeat="image in images">
+	<label>Start</label>
+	
+</div>
+	<div ng-repeat="image in images|imagefilter:startDate:endDate">
 		<img ng-src="{{image.standard_resolution_url}}" height="700" width="700">
 	</div>
 </div>

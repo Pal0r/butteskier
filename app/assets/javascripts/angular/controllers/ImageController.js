@@ -10,6 +10,4 @@ angular.module('app').controller("ImageController",
 	    instagramFactory.getImages().then(function(response){
 	    	$scope.images = response.data
 	    });
-	    // Image size slide controller
-	    $scope.imageSlider = 400;
 }]);
