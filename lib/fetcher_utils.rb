@@ -10,7 +10,8 @@ module FetcherUtils
           {
               'standard_resolution' => gram.images.standard_resolution.url,
               'thumb_nail' => gram.images.thumbnail.url,
-              'instagram_id' => gram.id
+              'instagram_id' => gram.id,
+              'instagram_json' => gram
           }
       )
     end
@@ -28,7 +29,8 @@ module FetcherUtils
             standard_resolution_url: gram['standard_resolution'],
             thumb_nail_url: gram['thumb_nail'],
             instagram_id: gram['instagram_id'],
-            area: area
+            area: area,
+            instagram_json: gram
         )
       rescue ActiveRecord::RecordNotUnique
         next

@@ -15,9 +15,16 @@ angular.module('app').controller("ImageController",
       // For large image show event
       $scope.showDisplay = function(areaIndex, imageIndex){
         $scope.displayImage = true;
-        $scope.showImgSrc = $scope.areas[areaIndex]['images'][imageIndex].standard_resolution_url
+        var image = $scope.areas[areaIndex]['images'][imageIndex],
+        instagramUser = image['instagram_json']['instagram_json']['user'];
+
+        $scope.showImgSrc = image.standard_resolution_url;
+        $scope.instaUser = {
+          username: instagramUser['username'],
+          userProfileImg: instagramUser['profile_picture']
+        }
       }
-      // Triggered on mouseout
+    // Triggered on mouseout
       $scope.closeDisplay = function(){
         $scope.displayImage = false;
       }

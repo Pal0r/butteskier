@@ -19,10 +19,17 @@ $(document).ready(function(){
 
 app.value('urlToGoToAfterLogin', {url: '/'});
 
-app.config(['$stateProvider','$urlRouterProvider',
-            '$locationProvider', '$httpProvider',
-  function($stateProvider, $urlRouterProvider,
-           $locationProvider, $httpProvider){
+app.config(['$stateProvider','$urlRouterProvider', '$locationProvider', '$httpProvider', '$sceDelegateProvider',
+  function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $sceDelegateProvider){
+    // Whitelist external links
+    $sceDelegateProvider.resourceUrlWhitelist([
+    // Allow same origin resource loads.
+    'self',
+    // Allow loading from outer templates domain.
+    'https://www.instagram.com/**',
+    'http://photos-f.ak.instagram.com/**'
+  ]);
+
     //unmatched routes redirect to root
     $urlRouterProvider.otherwise("/");
 

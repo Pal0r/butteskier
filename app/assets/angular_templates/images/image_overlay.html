@@ -1,5 +1,11 @@
 <div>
-  <div id="imageDisplay">
-    <img ng-src="{{showImgSrc}}" ng-mouseleave="closeDisplay()">
+  <div id="imageDisplay" ng-mouseleave="closeDisplay()">
+    <img ng-src="{{showImgSrc}}">
+    <span id="instaUserImage" class="pad-h-md">
+      <a class="pad-l-lg font-size-lg font-weight-800" ng-href="https://www.instagram.com/{{instaUser.username}}/">
+        <img class="circular-img" height="50" width="50" ng-src="{{instaUser.userProfileImg}}">
+         {{instaUser.username}}
+      </a>
+    </span>
   </div>
 </div>

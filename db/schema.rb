@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110205735) do
+ActiveRecord::Schema.define(version: 20151112201821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20151110205735) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "instagram_id"
+    t.jsonb    "instagram_json"
   end
 
   add_index "instagram_images", ["area_id"], name: "index_instagram_images_on_area_id", using: :btree

@@ -123,4 +123,12 @@ li {list-style-type: none;}
   box-shadow: 0 0 900px rgba(0,0,0,0.6);
   -moz-box-shadow: 0 0 900px rgba(0,0,0,0.6);
   -webkit-box-shadow: 0 0 900px rgba(0,0,0,0.6);
-  -o-box-shadow: 0 0 900px rgba(0,0,0,0.6);}
+  -o-box-shadow: 0 0 900px rgba(0,0,0,0.6);
+}
+#instaUserImage {
+  background: rgba(225, 225, 225, .8);
+  bottom: 20px;
+  width: 100%;
+  position: absolute;
+}
+#instaUserImage a {color: #000;}
