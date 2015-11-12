@@ -1,12 +1,15 @@
 <div class="pad-all-md">
-	<h3>Images</h3>
-	<div class="row">
-		<div class="col-md-offset-1">
-			<slick class="col-md-11" infinite="true" dots="true" slides-to-show="3" slides-to-scroll="3" init-onload="true" data="dataLoaded">
-				<div ng-repeat="image in images" >
-					<img ng-src="{{image.standard_resolution_url}}" height="270" width="270">
-				</div>
-			</slick>
+	<div id="images_container">
+		<div ng-if="displayImage" ng-include="'images/image_overlay.html'"></div>
+		<div class="row" ng-repeat="area in areas">
+			<div class="col-md-offset-1">
+				<h3>{{area.name}}</h3>
+				<slick class="col-md-11" infinite="true" dots="true" slides-to-show="3" slides-to-scroll="3" init-onload="true" data="dataLoaded">
+					<div ng-repeat="image in area.images">
+						<a href="#" ng-click="showDisplay($parent.$index, $index)"><img ng-src="{{image.standard_resolution_url}}" height="270" width="270"></a>
+					</div>
+				</slick>
+			</div>
 		</div>
 	</div>
 </div>

@@ -10,7 +10,7 @@ class V1::EventsController < V1::BaseController
   end
 
   def index
-    render :json => Event.all
+    render :json => Event.all.order(created_at: :desc)
   end
 
   def destroy

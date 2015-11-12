@@ -6,6 +6,14 @@ class V1::ImagesController < V1::BaseController
   end
 
   def index
-    render :json => InstagramImage.all
+    areas = []
+    Area.all.each do |area|
+      areas.push({
+      'name': area.name,
+      'images': InstagramImage.where(area_id: area.id)\
+      .order(created_at: :desc)
+      })
+    end
+    render :json => areas
   end
 end

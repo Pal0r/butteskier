@@ -114,3 +114,13 @@ li {list-style-type: none;}
 #calendar {background: rgba(225, 225, 225, .8)}
 #event-container {height: 600px; overflow: auto;}
 #event-container a {color: #000;}
+/* Instagram Images Container */
+#images_container {height: 700px; overflow: auto;}
+#imageDisplay {
+  z-index: 1000;
+  position: absolute;
+  left: 20%;
+  box-shadow: 0 0 900px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0 0 900px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 0 900px rgba(0,0,0,0.6);
+  -o-box-shadow: 0 0 900px rgba(0,0,0,0.6);}
