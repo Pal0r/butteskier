@@ -27,7 +27,7 @@ Vagrant.configure(2) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -38,7 +38,7 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  # config.vm.synced_folder '.', '/home/vagrant' # nfs: true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -49,7 +49,26 @@ Vagrant.configure(2) do |config|
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
+  config.vm.provider "virtualbox" do |v|
+    host = RbConfig::CONFIG['host_os']
+
+    # Give VM 1/4 system memory & access to all cpu cores on the host
+    if host =~ /darwin/
+      cpus = `sysctl -n hw.ncpu`.to_i
+      # sysctl returns Bytes and we need to convert to MB
+      mem = `sysctl -n hw.memsize`.to_i / 1024 / 1024 / 4
+    elsif host =~ /linux/
+      cpus = `nproc`.to_i
+      # meminfo shows KB and we need to convert to MB
+      mem = `grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//'`.to_i / 1024 / 4
+    else # sorry Windows folks, I can't help you
+      cpus = 2
+      mem = 1024
+    end
+
+    v.customize ["modifyvm", :id, "--memory", mem]
+    v.customize ["modifyvm", :id, "--cpus", cpus]
+  end
   # end
   #
   # View the documentation for the provider you are using for more

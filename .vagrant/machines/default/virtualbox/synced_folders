@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/ryanpalo/projects/skiapp/skiApp","disabled":false}}}
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/ryanpalo/projects/skiapp/skiApp","disabled":false},"/home/vagrant":{"guestpath":"/home/vagrant","hostpath":"/Users/ryanpalo/projects/skiapp/skiApp","disabled":false}}}
