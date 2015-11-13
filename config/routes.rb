@@ -11,10 +11,10 @@ Rails.application.routes.draw do
     #   resource :session, :only => [:create, :destroy]
     #   resource :registration, :only => [:create]
     # end
-    
-    resources :areas, :comments, :weather, :reports, :runs, :uploads, :events, :images
+
+    resources :areas, :comments, :weather, :reports, :runs, :uploads, :events, :images, :attendence
   end
-  
+
   root "angular_templates#index"
   get '*path' => 'angular_templates#index'
 end

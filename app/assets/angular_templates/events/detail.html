@@ -3,7 +3,14 @@
 	<div>
 		<h5>Agenda</h5>
 		<div>{{event.agenda}}<br/>
-		<img class="circular-img" ng-src="{{event.user.profile_img}}" height="50" width="50"> {{event.user.username}}</div>
+			<h5>Created by</h5>
+			<img class="circular-img" ng-src="{{event.user.profile_img}}" height="50" width="50"> {{event.user.username}}
+			<h5>Attendence</h5>
+			<div ng-repeat="user in event.attendence">
+				<img class="circular-img" ng-src="{{user.profile_img}}" height="50" width="50"> {{user.username}}
+				<button ng-if="user.id == current_user.id" class="btn btn-default" ng-click="leaveEvent(event.id, $index)">Bail</button>
+			</div>
+		</div>
 		<h5>{{area.name}}</h5>
 		<div>{{area.directions}}</div>
 	</div>

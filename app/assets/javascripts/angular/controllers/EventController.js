@@ -22,6 +22,9 @@ angular.module('app').controller("EventController",
           $scope.events.splice(eventIndex, 1)
         })
     };
+    $scope.addUser = function(event_id){
+      $http.post('/v1/attendence/',{'id': event_id})
+    }
     areaFactory.getAreas().then(function(response){
       var options = [];
       angular.forEach(response.data, function(area){

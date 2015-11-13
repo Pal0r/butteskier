@@ -13,8 +13,10 @@ class V1::EventsController < V1::BaseController
   def show
     event = Event.find(params[:id])
     user = User.find(event.user_id)
+    attendence = event.users.all
     event = event.as_json
     event['user'] = user
+    event['attendence'] = attendence
 
     render :json => event
   end
@@ -30,7 +32,7 @@ class V1::EventsController < V1::BaseController
 
   def destroy
     Event.find(params[:id]).delete
-    render :json => 'true'
+  render :json => 'true'
   end
 
   private

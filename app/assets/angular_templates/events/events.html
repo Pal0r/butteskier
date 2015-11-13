@@ -16,6 +16,7 @@
 						</a>
 						<span>{{event.start | date: 'medium'}}</span><br/>
 						{{event.agenda}}
+						<button  ng-if="event.user_id != user.id" class="btn btn-default" ng-click="addUser(event.id)">Join</button>
 						<a href="#" ng-if="event.user_id == user.id" ng-click="deleteEvent(event.id, $index)" class="font-weight-400" style="cursor: hand;" data-toggle="tooltip" title="Delete Event?">&#10005;</a>
 						<br/>
 						<img class="circular-img" height="50" width="50" ng-src="{{event.user.profile_img}}"> {{event.user.username}}
