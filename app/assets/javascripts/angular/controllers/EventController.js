@@ -7,6 +7,8 @@ angular.module('app').controller("EventController",
     $scope.eventFormData = {}
 
     $scope.submitEvent = function(){
+      // Set the user's id in the form data
+      $scope.eventFormData.user_id = $scope.user.id
       $http.post('/v1/events', $scope.eventFormData)
         .success(function(response){
           $scope.events.unshift(response.event)
@@ -14,6 +16,12 @@ angular.module('app').controller("EventController",
           $scope.eventFormData = {}
         })
     }
+    $scope.deleteEvent = function(event_id, eventIndex){
+      $http.delete('/v1/events/' + event_id)
+        .success(function(response){
+          $scope.events.splice(eventIndex, 1)
+        })
+    };
     areaFactory.getAreas().then(function(response){
       var options = [];
       angular.forEach(response.data, function(area){
@@ -75,8 +83,7 @@ angular.module('app').controller("EventController",
         event['start'] = new Date(event.start)
         $scope.events.push(event)
       })
-       
-    })
-    
-}]);
 
+    })
+
+}]);

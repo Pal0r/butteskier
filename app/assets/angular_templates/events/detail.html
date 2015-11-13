@@ -2,7 +2,8 @@
 	<h3>{{event.title}} <small>{{event.start | date: 'medium'}}</h3>
 	<div>
 		<h5>Agenda</h5>
-		<div>{{event.agenda}}</div>
+		<div>{{event.agenda}}<br/>
+		<img class="circular-img" ng-src="{{event.user.profile_img}}" height="50" width="50"> {{event.user.username}}</div>
 		<h5>{{area.name}}</h5>
 		<div>{{area.directions}}</div>
 	</div>

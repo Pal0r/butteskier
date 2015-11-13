@@ -2,6 +2,7 @@ angular.module('app').controller("EventDetailController",
   ['$scope', 'AuthService', '$stateParams', '$http', '$location', 'areaFactory',
   function ($scope, AuthService, $stateParams, $http, $location, areaFactory) {
     // Hide the ui-view blur background
+    $scope.user = AuthService.user;
     $scope.hideBackground = false;
     // Get and set event data to the scope
     $http.get('/v1/events/' + $stateParams.eventID)
@@ -14,4 +15,3 @@ angular.module('app').controller("EventDetailController",
       })
     })
 }]);
-
