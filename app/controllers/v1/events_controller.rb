@@ -2,10 +2,11 @@ class V1::EventsController < V1::BaseController
 
   def create
     event = Event.create(event_params)
-    @user = User.find(event.user_id)
+    event.user_id = current_user.id
+    event.save
     event = event.as_json
 
-    event['user'] = @user
+    event['user'] = current_user
 
     render :json => {:event => event}
   end
