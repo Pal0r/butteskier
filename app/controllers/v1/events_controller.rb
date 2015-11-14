@@ -2,8 +2,8 @@ class V1::EventsController < V1::BaseController
 
   def create
     event = Event.create(event_params)
-    event.user_id = current_user
-    event.save
+    # event.user_id = current_user
+    # event.save
     event = event.as_json
 
     event['user'] = current_user
