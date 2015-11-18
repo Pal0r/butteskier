@@ -1,7 +1,7 @@
 require 'resque_scheduler'
 
 Resque.redis = 'localhost:6379'
-Resque.redis.namespace = "resque:SchedulerExample"
+Resque.redis.namespace = "resque:TaskScheduler"
 
 # If you want to be able to dynamically change the schedule,
 # uncomment this line.  A dynamic schedule can be updated via the
