@@ -47,9 +47,14 @@ gem 'figaro'
 #Application server
 gem 'unicorn'
 
-#AWS SDK 
+#AWS SDK
 gem 'aws-sdk', '~> 1'
 gem 'aws-sdk-core'
+
+#Cron jobs
+gem 'resque'
+gem 'resque-scheduler', '~> 2.5.5'
+gem 'rufus-scheduler'
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
@@ -73,6 +78,3 @@ end
 gem 'devise'
 gem 'simple_token_authentication'
 gem 'angular_rails_csrf'
-
-
-

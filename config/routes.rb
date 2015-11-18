@@ -1,5 +1,8 @@
+require "resque/server"
+
 Rails.application.routes.draw do
 
+  mount Resque::Server.new, :at => "/resque"
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   api_version(:module => "butteskier", :path => {:value => "skiapp"}) do
   end

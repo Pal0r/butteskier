@@ -1,0 +1,11 @@
+do_forecast_job:
+  every: 2h
+  class: ForecastJob
+  args:
+  description: updates all area weather every 120 minutes
+
+do_instagram_job:
+  every: 2h
+  class: InstagramJob
+  args:
+  description: updates instagrams 120 minutes
