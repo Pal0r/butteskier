@@ -53,8 +53,10 @@ gem 'aws-sdk-core'
 
 #Cron jobs
 gem 'resque'
-gem 'resque-scheduler', '~> 2.5.5'
+gem 'resque-scheduler'
+gem 'airbrake'
 gem 'rufus-scheduler'
+gem 'resque-logger'
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0'

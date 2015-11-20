@@ -1,9 +1,9 @@
 include WeatherFetcher
 
-module ForecastJob
+class ForecastWorker < BaseWorker
   @queue = :forecast_job_queue
   def self.perform()
     WeatherFetcher.update_areas
-    puts('weather updated')
+    logger.info('weather updated')
   end
 end
