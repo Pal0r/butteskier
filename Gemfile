@@ -58,6 +58,10 @@ gem 'airbrake'
 gem 'rufus-scheduler'
 gem 'resque-logger'
 
+group :test, :development do
+  gem 'jasmine-rails'
+end
+
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl', '~> 4.4.0'

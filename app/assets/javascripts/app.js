@@ -5,6 +5,7 @@ app = angular.module('app', [
   'uiGmapgoogle-maps', //angular-gmaps
   'formly', //angular forms
   'formlyBootstrap',
+  'ngMock',
   'angular-skycons', //Icons for area weather
   'lr.upload', // User image upload
   'ui.calendar', // event calendar

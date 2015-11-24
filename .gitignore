@@ -16,7 +16,7 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
-# Make a copy from the templates and use it localy
+# Make a copy from the templates and use it locally
 config/secrets.yml
 config/database.yml
 /config/secrets.yml
@@ -30,6 +30,7 @@ config/database.yml
 # If using bower-rails ignore default bower_components path bower.json files
 /vendor/assets/bower_components
 /lib/assets/bower_components
+/node_modules
 *.bowerrc
 
 # sublime files
