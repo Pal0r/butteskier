@@ -30,7 +30,10 @@ config/database.yml
 # If using bower-rails ignore default bower_components path bower.json files
 /vendor/assets/bower_components
 /lib/assets/bower_components
+
+# Since we're only testing locally, keep test related node packages out of vc
 /node_modules
+
 *.bowerrc
 
 # sublime files
