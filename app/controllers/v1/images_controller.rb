@@ -11,7 +11,8 @@ class V1::ImagesController < V1::BaseController
       areas.push({
       'name': area.name,
       'images': InstagramImage.where(area_id: area.id)\
-      .order(created_at: :desc)
+      .order(created_at: :desc)\
+      .last(20)
       })
     end
     render :json => areas

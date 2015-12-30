@@ -31,7 +31,7 @@ angular.module('app').controller("EditUserController",
       };
       // Add the user's profile img to the current user
       $scope.uploadOnSuccess = function(response){
-        $scope.user.profile_img = response.data.profile_img
+        $scope.user.profile_img = response.data.profile_img;
       }
       $scope.userFields = [
         {
